@@ -4,4 +4,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ca734570cabb10dabcf6/maintainability)](https://codeclimate.com/github/DariaPolubenko/java-project-99/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ca734570cabb10dabcf6/test_coverage)](https://codeclimate.com/github/DariaPolubenko/java-project-99/test_coverage)
 
-[Link app](https://java-project-99-u8ug.onrender.com/welcome)
+[App link](https://java-project-99-u8ug.onrender.com/welcome)
