@@ -9,7 +9,3 @@ spring:
       enabled: always
   profiles:
     default: development
-
-logging:
-  level:
-    root: WARN
