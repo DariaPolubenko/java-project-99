@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: "com.h2database:h2"
+    username: sa
+    password: 123
