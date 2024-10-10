@@ -3,3 +3,5 @@ spring:
     url: "postgresql://base_7iv7_user:2bFiuSUtWaQgFXo1Vm8YuPhd5FVZZJWJ@dpg-cs3da18gph6c73bvad00-a/base_7iv7"
     username: base_7iv7_user
     password: 2bFiuSUtWaQgFXo1Vm8YuPhd5FVZZJWJ
+  jpa:
+    open-in-view: false
