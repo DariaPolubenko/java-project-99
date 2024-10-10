@@ -6,7 +6,3 @@ spring:
     driverClassName: org.h2.Driver
   h2:
     console.enabled: true
-
-logging:
-  level:
-    root: WARN
