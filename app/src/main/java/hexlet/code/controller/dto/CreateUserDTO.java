@@ -1,14 +1,27 @@
 package hexlet.code.controller.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import org.openapitools.jackson.nullable.JsonNullable;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 public class CreateUserDTO {
+    @NotNull
+    @Email
     private String email;
-    private String firstName;
-    private String lastName;
+
+    private JsonNullable<String> firstName;
+    private JsonNullable<String> lastName;
+    private JsonNullable<LocalDateTime> createdAt;
+
+    @NotNull
+    @Size(min = 3)
     private String password;
 
 }
