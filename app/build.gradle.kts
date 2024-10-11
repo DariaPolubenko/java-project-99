@@ -25,6 +25,8 @@ repositories {
 
 dependencies {
 	runtimeOnly("com.h2database:h2")
+	implementation("org.mapstruct:mapstruct:1.5.5.Final")
+	annotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
 	implementation("org.springframework.boot:spring-boot-devtools")
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.springframework.boot:spring-boot-starter-web")
