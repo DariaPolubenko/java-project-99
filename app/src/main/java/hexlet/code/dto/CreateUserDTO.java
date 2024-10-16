@@ -18,10 +18,9 @@ public class CreateUserDTO {
 
     private JsonNullable<String> firstName;
     private JsonNullable<String> lastName;
-    private JsonNullable<LocalDateTime> createdAt;
 
     @NotNull
     @Size(min = 3)
-    private String password;
+    private String passwordDigest;
 
 }
