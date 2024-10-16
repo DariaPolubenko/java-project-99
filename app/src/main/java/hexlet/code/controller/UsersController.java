@@ -1,16 +1,14 @@
 package hexlet.code.controller;
 
-import hexlet.code.controller.dto.UserDTO;
+import hexlet.code.dto.CreateUserDTO;
+import hexlet.code.dto.UpdateUserDTO;
+import hexlet.code.dto.UserDTO;
 import hexlet.code.exception.ResourceNotFoundException;
 import hexlet.code.mapper.UserMapper;
 import hexlet.code.repository.UserRepository;
-import org.hibernate.annotations.NotFound;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,5 +35,30 @@ public class UsersController {
                 .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
         var userDTO = userMapper.map(user);
         return userDTO;
+    }
+
+    @PostMapping
+    public UserDTO create(@Valid @RequestBody CreateUserDTO data) {
+        var user = userMapper.map(data);
+        userRepository.save(user);
+        var userDTO = userMapper.map(user);
+        return userDTO;
+    }
+
+    @PutMapping("/{id}")
+    public UserDTO update(@PathVariable Long id, @Valid UpdateUserDTO data) {
+        var user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
+        userMapper.update(data, user);
+        userRepository.save(user);
+        var userDTO = userMapper.map(user);
+        return userDTO;
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        var user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
+        userRepository.delete(user);
     }
 }
