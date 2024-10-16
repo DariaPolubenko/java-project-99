@@ -39,10 +39,12 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	implementation("net.datafaker:datafaker:2.3.2")
-	testImplementation(platform("org.junit:junit-bom:5.10.0"))
-	testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+	implementation("org.instancio:instancio-junit:3.3.0")
+	testImplementation(platform("org.junit:junit-bom:5.10.3"))
+	testImplementation("org.junit.jupiter:junit-jupiter:5.10.3")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
+	testImplementation("net.javacrumbs.json-unit:json-unit-assertj:3.2.7")
 }
 
 tasks.withType<Test> {
