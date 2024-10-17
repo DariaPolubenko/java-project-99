@@ -77,6 +77,8 @@ class UsersControllerTest {
 		assertThatJson(body).isArray();
 		assertThat(body).contains(testUser.getFirstName());
 		assertThat(body).doesNotContain(testUser.getPasswordDigest());
+
+		assertThat(body).contains("hexlet@example.com");
 	}
 
 	@Test
