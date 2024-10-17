@@ -9,7 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
-/*
+
 @Component
 @AllArgsConstructor
 public class DataInitializer implements ApplicationRunner {
@@ -31,5 +31,3 @@ public class DataInitializer implements ApplicationRunner {
         }
     }
 }
-
- */
