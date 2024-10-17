@@ -1,7 +1,7 @@
 spring:
 
   datasource:
-    url: "jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE"
+    url: "jdbc:h2:mem:test"
     username: sa
     password: 123
     driverClassName: org.h2.Driver
