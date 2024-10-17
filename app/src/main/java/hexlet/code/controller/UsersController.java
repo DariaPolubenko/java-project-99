@@ -8,6 +8,7 @@ import hexlet.code.mapper.UserMapper;
 import hexlet.code.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,6 +39,7 @@ public class UsersController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public UserDTO create(@Valid @RequestBody CreateUserDTO data) {
         var user = userMapper.map(data);
         userRepository.save(user);
@@ -46,7 +48,7 @@ public class UsersController {
     }
 
     @PutMapping("/{id}")
-    public UserDTO update(@PathVariable Long id, @Valid UpdateUserDTO data) {
+    public UserDTO update(@PathVariable Long id, @Valid @RequestBody UpdateUserDTO data) {
         var user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
         userMapper.update(data, user);
