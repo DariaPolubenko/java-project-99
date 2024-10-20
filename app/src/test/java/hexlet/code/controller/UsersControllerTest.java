@@ -1,6 +1,7 @@
 package hexlet.code.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import hexlet.code.dto.AuthRequest;
 import hexlet.code.model.User;
 import hexlet.code.repository.UserRepository;
 import hexlet.code.util.ModelGeneratorUser;
@@ -22,6 +23,7 @@ import static org.springframework.security.test.web.servlet.setup.SecurityMockMv
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -52,6 +54,9 @@ class UsersControllerTest {
 	private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor token;
 
 	private User testUser;
+
+	@Autowired
+	private JwtDecoder jwtDecoder;
 
 	@BeforeEach
 	public void setUp() {
@@ -192,4 +197,30 @@ class UsersControllerTest {
 		mockMvc.perform(delete("/api/users/" + 10000).with(token))
 				.andExpect(status().isNotFound());
 	}
+
+	@Test
+	public void testAuthentication() throws Exception {
+		var data = new AuthRequest();
+		data.setUsername("hexlet@example.com");
+		data.setPassword("qwerty");
+
+		var request = MockMvcRequestBuilders.post("/api/login")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(om.writeValueAsString(data));
+
+		mockMvc.perform(request)
+				.andExpect(status().isOk());
+	}
+/*
+	@Test
+	public void testDeleteAnotherUser() throws Exception {
+		var user = Instancio.of(modelGeneratorUser.getUserModel()).create();
+		user.setPasswordDigest("qwerty");
+		userRepository.save(user);
+		var userToken = jwt().jwt(builder -> builder.subject(user.getEmail()));
+
+		mockMvc.perform(delete("/api/users/" + testUser.getId()).with(userToken))
+				.andExpect(status().isForbidden());
+	}
+ */
 }
