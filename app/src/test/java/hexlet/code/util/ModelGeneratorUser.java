@@ -19,10 +19,9 @@ public class ModelGeneratorUser {
     private Model<CreateUserDTO> createUserDTOModel;
     private Model<UpdateUserDTO> updateUserDTOModel;
 
-    private Faker faker = new Faker();
-
     @PostConstruct
     private void init() {
+        Faker faker = new Faker();
         userModel = Instancio.of(User.class)
                 .ignore(Select.field(User::getId))
                 .supply(Select.field(User::getFirstName), () -> faker.name().firstName())
@@ -45,5 +44,4 @@ public class ModelGeneratorUser {
                 .supply(Select.field(UpdateUserDTO::getPasswordDigest), () -> JsonNullable.of(faker.internet().password()))
                 .toModel();
     }
-
 }
