@@ -36,12 +36,12 @@ public class ModelGeneratorUser {
                 .supply(Select.field(CreateUserDTO::getEmail), () -> faker.internet().emailAddress())
                 .supply(Select.field(CreateUserDTO::getFirstName), () -> JsonNullable.of(faker.name().firstName()))
                 .supply(Select.field(CreateUserDTO::getLastName), () -> JsonNullable.of(faker.name().lastName()))
-                .supply(Select.field(CreateUserDTO::getPasswordDigest), () -> faker.internet().password())
+                .supply(Select.field(CreateUserDTO::getPassword), () -> faker.internet().password())
                 .toModel();
 
         updateUserDTOModel = Instancio.of(UpdateUserDTO.class)
                 .supply(Select.field(UpdateUserDTO::getEmail), () -> JsonNullable.of(faker.internet().emailAddress()))
-                .supply(Select.field(UpdateUserDTO::getPasswordDigest), () -> JsonNullable.of(faker.internet().password()))
+                .supply(Select.field(UpdateUserDTO::getPassword), () -> JsonNullable.of(faker.internet().password()))
                 .toModel();
     }
 }
