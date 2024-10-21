@@ -9,6 +9,7 @@ import hexlet.code.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,10 +25,15 @@ public class UsersController {
     private UserMapper userMapper;
 
     @GetMapping()
-    public List<UserDTO> index() {
+    public ResponseEntity<List<UserDTO>> index() {
         var users = userRepository.findAll();
-        var usersDTO = users.stream().map(u -> userMapper.map(u)).toList();
-        return usersDTO;
+        var usersDTO = users.stream()
+                .map(userMapper::map)
+                .toList();
+
+        return ResponseEntity.ok()
+                .header("X-Total-Count", String.valueOf(users.size()))
+                .body(usersDTO);
     }
 
     @GetMapping("/{id}")
