@@ -2,12 +2,14 @@ package hexlet.code.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hexlet.code.dto.AuthRequest;
+import hexlet.code.dto.CreateUserDTO;
 import hexlet.code.model.User;
 import hexlet.code.repository.UserRepository;
 import hexlet.code.util.ModelGeneratorUser;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mapstruct.BeforeMapping;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,6 +25,7 @@ import static org.springframework.security.test.web.servlet.setup.SecurityMockMv
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
 import org.springframework.test.web.servlet.MockMvc;
@@ -129,14 +132,13 @@ class UsersControllerTest {
 		assertNotNull(user);
 		assertThat(user.getFirstName()).isEqualTo(data.getFirstName().get());
 		assertThat(user.getLastName()).isEqualTo(data.getLastName().get());
-		assertThat(user.getPasswordDigest()).isEqualTo(data.getPasswordDigest());
 	}
 
 	@Test
 	public void testCreateWithWrongPassword() throws Exception {
 		var data = Instancio.of(modelGeneratorUser.getCreateUserDTOModel())
 				.create();
-		data.setPasswordDigest("12");
+		data.setPassword("12");
 
 		var request = MockMvcRequestBuilders.post("/api/users")
 				.with(token)
@@ -165,7 +167,7 @@ class UsersControllerTest {
 		assertThat(user.getId()).isEqualTo(testUser.getId());
 		assertThat(user.getFirstName()).isEqualTo(testUser.getFirstName());
 		assertThat(user.getEmail()).isEqualTo(data.getEmail().get());
-		assertThat(user.getPasswordDigest()).isEqualTo(data.getPasswordDigest().get());
+		assertThat(user.getPasswordDigest()).isEqualTo(data.getPassword().get());
 	}
 
 	@Test
