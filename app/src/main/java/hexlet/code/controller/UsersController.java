@@ -25,15 +25,13 @@ public class UsersController {
     private UserMapper userMapper;
 
     @GetMapping()
-    public ResponseEntity<List<UserDTO>> index() {
+    public List<UserDTO> index() {
         var users = userRepository.findAll();
         var usersDTO = users.stream()
                 .map(userMapper::map)
                 .toList();
 
-        return ResponseEntity.ok()
-                .header("X-Total-Count", String.valueOf(users.size()))
-                .body(usersDTO);
+        return usersDTO;
     }
 
     @GetMapping("/{id}")
