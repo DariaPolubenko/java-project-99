@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.ApplicationArguments;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 
@@ -27,6 +28,10 @@ public class DataInitializer implements ApplicationRunner {
             var userData = new User();
             userData.setEmail(email);
             userData.setPasswordDigest("qwerty");
+
+            //var hashedPassword = passwordEncoder.encode(userData.getPassword());
+            //userData.setPasswordDigest(hashedPassword);
+
             userService.createUser(userData);
         }
     }
