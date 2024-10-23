@@ -11,7 +11,11 @@ spring:
   profiles:
     default: development
 
-
+logging:
+  level:
+    org:
+      springframework:
+        security: trace
 
 rsa:
     private-key: classpath:certs/private.pem
