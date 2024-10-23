@@ -10,6 +10,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,14 +25,20 @@ public class UsersController {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @GetMapping()
-    public List<UserDTO> index() {
+    public ResponseEntity<List<UserDTO>> index() {
         var users = userRepository.findAll();
         var usersDTO = users.stream()
                 .map(userMapper::map)
                 .toList();
 
-        return usersDTO;
+        return ResponseEntity.ok()
+                .header("X-Total-Count", String.valueOf(users.size()))
+                .body(usersDTO);
+        //return usersDTO;
     }
 
     @GetMapping("/{id}")
@@ -46,7 +53,14 @@ public class UsersController {
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO create(@Valid @RequestBody CreateUserDTO data) {
         var user = userMapper.map(data);
+        System.out.println("Пароль CreateUserDTO: " + data.getPassword());
+        System.out.println("Пароль User до сохранения: " + user.getPasswordDigest());
+
+        //var hashedPassword = passwordEncoder.encode(data.getPassword());
+        //user.setPasswordDigest(hashedPassword);
+
         userRepository.save(user);
+        System.out.println("Пароль User после сохранения: " + user.getPasswordDigest());
         var userDTO = userMapper.map(user);
         return userDTO;
     }
@@ -56,6 +70,12 @@ public class UsersController {
         var user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
         userMapper.update(data, user);
+
+        //if (data.getPassword().isPresent()) {
+            //var hashedPassword = passwordEncoder.encode(data.getPassword().get());
+            //user.setPasswordDigest(hashedPassword);
+        //}
+
         userRepository.save(user);
         var userDTO = userMapper.map(user);
         return userDTO;
