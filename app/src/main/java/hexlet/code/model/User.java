@@ -40,9 +40,7 @@ public class User implements UserDetails {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @ToString.Include
     private String firstName;
-    @ToString.Include
     private String lastName;
 
     @Column(unique = true)
