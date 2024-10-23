@@ -6,4 +6,6 @@ spring:
     password: 123
     driverClassName: org.h2.Driver
   h2:
-    console.enabled: true
+    console:
+      enabled: true
+      path: /h2-console
