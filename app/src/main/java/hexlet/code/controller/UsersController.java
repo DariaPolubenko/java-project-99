@@ -39,7 +39,7 @@ public class UsersController {
 
     private static final String AUTHORIZATION = "authentication.getName() == @userRepository.findById(#id).get().getEmail()";
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<UserDTO>> index() {
         var users = userRepository.findAll();
         var usersDTO = users.stream()
