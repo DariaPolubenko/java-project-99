@@ -78,6 +78,20 @@ class UsersControllerTest {
 	}
 
 	@Test
+	public void testAuthentication() throws Exception {
+		var data = new AuthRequest();
+		data.setUsername("hexlet@example.com");
+		data.setPassword("qwerty");
+
+		var request = MockMvcRequestBuilders.post("/api/login")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(om.writeValueAsString(data));
+
+		mockMvc.perform(request)
+				.andExpect(status().isOk());
+	}
+
+	@Test
 	public void testIndex() throws Exception {
 		var result = mockMvc.perform(get("/api/users").with(adminToken))
 				.andExpect(status().isOk())
@@ -221,32 +235,6 @@ class UsersControllerTest {
 		mockMvc.perform(delete("/api/users/" + 10000).with(adminToken))
 				.andExpect(status().isNotFound());
 	}
-
  */
 
-	@Test
-	public void testAuthentication() throws Exception {
-		var data = new AuthRequest();
-		data.setUsername("hexlet@example.com");
-		data.setPassword("qwerty");
-
-		var request = MockMvcRequestBuilders.post("/api/login")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(om.writeValueAsString(data));
-
-		mockMvc.perform(request)
-				.andExpect(status().isOk());
-	}
-/*
-	@Test
-	public void testDeleteAnotherUser() throws Exception {
-		var user = Instancio.of(modelGeneratorUser.getUserModel()).create();
-		user.setPasswordDigest("qwerty");
-		userRepository.save(user);
-		var userToken = jwt().jwt(builder -> builder.subject(user.getEmail()));
-
-		mockMvc.perform(delete("/api/users/" + testUser.getId()).with(userToken))
-				.andExpect(status().isForbidden());
-	}
- */
 }
