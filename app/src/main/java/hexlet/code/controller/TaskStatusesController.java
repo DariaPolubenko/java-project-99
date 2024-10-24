@@ -25,7 +25,7 @@ public class TaskStatusesController {
     @Autowired
     private TaskStatusMapper taskStatusMapper;
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<TaskStatusDTO>> index() {
         var taskStatuses = taskStatusRepository.findAll();
         var taskStatusesDTO = taskStatuses.stream()
