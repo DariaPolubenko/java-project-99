@@ -1,9 +1,9 @@
 package hexlet.code.mapper;
 
 
-import hexlet.code.dto.CreateUserDTO;
-import hexlet.code.dto.UpdateUserDTO;
-import hexlet.code.dto.UserDTO;
+import hexlet.code.dto.user.CreateUserDTO;
+import hexlet.code.dto.user.UpdateUserDTO;
+import hexlet.code.dto.user.UserDTO;
 import hexlet.code.model.User;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
