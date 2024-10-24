@@ -1,7 +1,7 @@
 package hexlet.code.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hexlet.code.dto.AuthRequest;
+import hexlet.code.dto.user.AuthRequest;
 import hexlet.code.model.User;
 import hexlet.code.repository.UserRepository;
 import hexlet.code.util.ModelGeneratorUser;
@@ -23,8 +23,6 @@ import static org.springframework.security.test.web.servlet.setup.SecurityMockMv
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -55,12 +53,6 @@ class UsersControllerTest {
 	private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
 
 	private User testUser;
-
-	@Autowired
-	private JwtDecoder jwtDecoder;
-
-	@Autowired
-	private PasswordEncoder passwordEncoder;
 
 
 	@BeforeEach
@@ -103,13 +95,11 @@ class UsersControllerTest {
 		assertThat(body).doesNotContain(testUser.getPasswordDigest());
 
 		assertThat(body).contains("hexlet@example.com");
-
-		System.out.println(userRepository.findById(Long.valueOf(1)).get().getPasswordDigest());
 	}
 
 	@Test
 	public void testIndexWithOutAuthorization() throws Exception {
-		var result = mockMvc.perform(get("/api/users"))
+		mockMvc.perform(get("/api/users"))
 				.andExpect(status().isUnauthorized());
 	}
 
@@ -123,7 +113,9 @@ class UsersControllerTest {
 		assertThatJson(body).and(
 				v -> v.node("id").isEqualTo(testUser.getId()),
 				v -> v.node("email").isEqualTo(testUser.getEmail()),
-				v -> v.node("firstName").isEqualTo(testUser.getFirstName()));
+				v -> v.node("firstName").isEqualTo(testUser.getFirstName()),
+				v -> v.node("lastName").isEqualTo(testUser.getLastName()),
+				v -> v.node("createdAt").isEqualTo(testUser.getCreatedAt()));
 	}
 
 	@Test
@@ -136,8 +128,6 @@ class UsersControllerTest {
 	public void testCreate() throws Exception {
 		var data = Instancio.of(modelGeneratorUser.getCreateUserDTOModel())
 				.create();
-
-		System.out.println("Пароль входящих сырых данных: " + data.getPassword());
 
 		var request = MockMvcRequestBuilders.post("/api/users")
 				.with(adminToken)
@@ -152,7 +142,6 @@ class UsersControllerTest {
 		assertNotNull(user);
 		assertThat(user.getFirstName()).isEqualTo(data.getFirstName().get());
 		assertThat(user.getLastName()).isEqualTo(data.getLastName().get());
-
 	}
 
 	@Test
@@ -182,7 +171,6 @@ class UsersControllerTest {
 
 		mockMvc.perform(request)
 				.andExpect(status().isForbidden());
-
 
 		var tokenTestUser = jwt().jwt(builder -> builder.subject(testUser.getEmail()));
 		var request2 = MockMvcRequestBuilders.put("/api/users/" + testUser.getId())
