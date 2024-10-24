@@ -13,7 +13,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.nio.file.AccessDeniedException;
 import java.util.List;
@@ -60,15 +68,14 @@ public class UsersController {
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO create(@Valid @RequestBody CreateUserDTO data) {
         var user = userMapper.map(data);
-        //System.out.println("Пароль CreateUserDTO: " + data.getPassword());
-        //System.out.println("Пароль User до сохранения: " + user.getPasswordDigest());
-
         userRepository.save(user);
-        //System.out.println("Пароль User после сохранения: " + user.getPasswordDigest());
         var userDTO = userMapper.map(user);
         return userDTO;
     }
 
+    //не очень нравится решение с AUTHORIZATION, так как повторно обновить емаил не дает,
+    //нужно выйти и зайти заново, чтобы обновился токен, котрый генерируется на основе email
+    //наверное, правильнее ипсользовать роли, но пока не разбиралась с тем, как их назначать
     @PreAuthorize(AUTHORIZATION)
     @PutMapping("/{id}")
     public UserDTO update(@PathVariable Long id, @Valid @RequestBody UpdateUserDTO data) throws AccessDeniedException {
