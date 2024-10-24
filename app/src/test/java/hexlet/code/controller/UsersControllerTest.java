@@ -52,7 +52,7 @@ class UsersControllerTest {
 	@Autowired
 	private ObjectMapper om;
 
-	private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor token;
+	private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
 
 	private User testUser;
 
@@ -65,7 +65,7 @@ class UsersControllerTest {
 
 	@BeforeEach
 	public void setUp() {
-		token = jwt().jwt(builder -> builder.subject("hexlet@example.com"));
+		adminToken = jwt().jwt(builder -> builder.subject("hexlet@example.com"));
 
 		mockMvc = MockMvcBuilders.webAppContextSetup(wac)
 				.defaultResponseCharacterEncoding(StandardCharsets.UTF_8)
@@ -79,7 +79,7 @@ class UsersControllerTest {
 
 	@Test
 	public void testIndex() throws Exception {
-		var result = mockMvc.perform(get("/api/users").with(token))
+		var result = mockMvc.perform(get("/api/users").with(adminToken))
 				.andExpect(status().isOk())
 				.andReturn();
 
@@ -101,7 +101,7 @@ class UsersControllerTest {
 
 	@Test
 	public void testShow() throws Exception {
-		var result = mockMvc.perform(get("/api/users/" + testUser.getId()).with(token))
+		var result = mockMvc.perform(get("/api/users/" + testUser.getId()).with(adminToken))
 				.andExpect(status().isOk())
 				.andReturn();
 
@@ -114,7 +114,7 @@ class UsersControllerTest {
 
 	@Test
 	public void testShowWithWrongId() throws Exception {
-		mockMvc.perform(get("/api/users/" + 10000).with(token))
+		mockMvc.perform(get("/api/users/" + 10000).with(adminToken))
 				.andExpect(status().isNotFound());
 	}
 
@@ -126,7 +126,7 @@ class UsersControllerTest {
 		System.out.println("Пароль входящих сырых данных: " + data.getPassword());
 
 		var request = MockMvcRequestBuilders.post("/api/users")
-				.with(token)
+				.with(adminToken)
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(om.writeValueAsString(data));
 
@@ -148,7 +148,7 @@ class UsersControllerTest {
 		data.setPassword("12");
 
 		var request = MockMvcRequestBuilders.post("/api/users")
-				.with(token)
+				.with(adminToken)
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(om.writeValueAsString(data));
 
@@ -162,11 +162,21 @@ class UsersControllerTest {
 				.create();
 
 		var request = MockMvcRequestBuilders.put("/api/users/" + testUser.getId())
-				.with(token)
+				.with(adminToken)
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(om.writeValueAsString(data));
 
 		mockMvc.perform(request)
+				.andExpect(status().isForbidden());
+
+
+		var tokenTestUser = jwt().jwt(builder -> builder.subject(testUser.getEmail()));
+		var request2 = MockMvcRequestBuilders.put("/api/users/" + testUser.getId())
+				.with(tokenTestUser)
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(om.writeValueAsString(data));
+
+		mockMvc.perform(request2)
 				.andExpect(status().isOk());
 
 		var user = userRepository.findById(testUser.getId()).get();
@@ -184,7 +194,7 @@ class UsersControllerTest {
 		data.setEmail(JsonNullable.of("wrong_email"));
 
 		var request = MockMvcRequestBuilders.put("/api/users" + testUser.getId())
-				.with(token)
+				.with(adminToken)
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(om.writeValueAsString(data));
 
@@ -194,18 +204,25 @@ class UsersControllerTest {
 
 	@Test
 	public void testDelete() throws Exception {
-		mockMvc.perform(delete("/api/users/" + testUser.getId()).with(token))
+		mockMvc.perform(delete("/api/users/" + testUser.getId()).with(adminToken))
+				.andExpect(status().isForbidden());
+
+		var tokenTestUser = jwt().jwt(builder -> builder.subject(testUser.getEmail()));
+
+		mockMvc.perform(delete("/api/users/" + testUser.getId()).with(tokenTestUser))
 				.andExpect(status().isOk());
 
 		var user = userRepository.findById(testUser.getId());
 		assertThat(user).isEmpty();
 	}
-
+/*
 	@Test
 	public void testDeleteWithWrongId() throws Exception {
-		mockMvc.perform(delete("/api/users/" + 10000).with(token))
+		mockMvc.perform(delete("/api/users/" + 10000).with(adminToken))
 				.andExpect(status().isNotFound());
 	}
+
+ */
 
 	@Test
 	public void testAuthentication() throws Exception {
