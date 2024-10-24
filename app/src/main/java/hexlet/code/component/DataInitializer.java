@@ -28,9 +28,6 @@ public class DataInitializer implements ApplicationRunner {
             userData.setEmail(email);
             userData.setPasswordDigest("qwerty");
 
-            //var hashedPassword = passwordEncoder.encode(userData.getPassword());
-            //userData.setPasswordDigest(hashedPassword);
-
             userService.createUser(userData);
         }
     }
