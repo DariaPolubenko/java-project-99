@@ -80,11 +80,12 @@ class TaskStatusesControllerTest {
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
+        System.out.println(body);
         assertThatJson(body).and(
                 v -> v.node("id").isEqualTo(taskStatus.getId()),
                 v -> v.node("name").isEqualTo(taskStatus.getName()),
                 v -> v.node("slug").isEqualTo(taskStatus.getSlug()),
-                v -> v.node("createdAt").isEqualTo(taskStatus.getCreatedAt()));
+                v -> v.node("createdAt").isEqualTo(taskStatus.getCreatedAt().toString()));
     }
 
     @Test
