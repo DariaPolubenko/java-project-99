@@ -110,12 +110,13 @@ class UsersControllerTest {
 				.andReturn();
 
 		var body = result.getResponse().getContentAsString();
+		System.out.println(body);
 		assertThatJson(body).and(
 				v -> v.node("id").isEqualTo(testUser.getId()),
 				v -> v.node("email").isEqualTo(testUser.getEmail()),
 				v -> v.node("firstName").isEqualTo(testUser.getFirstName()),
 				v -> v.node("lastName").isEqualTo(testUser.getLastName()),
-				v -> v.node("createdAt").isEqualTo(testUser.getCreatedAt()));
+				v -> v.node("createdAt").isEqualTo(testUser.getCreatedAt().toString()));
 	}
 
 	@Test
