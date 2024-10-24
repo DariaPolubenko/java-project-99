@@ -5,9 +5,17 @@ import hexlet.code.dto.CreateUserDTO;
 import hexlet.code.dto.UpdateUserDTO;
 import hexlet.code.dto.UserDTO;
 import hexlet.code.model.User;
-import org.mapstruct.*;
+import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.BeforeMapping;
+
+import org.mapstruct.MappingConstants;
+import org.mapstruct.ReportingPolicy;
+
 
 @Mapper(
         uses = { JsonNullableMapper.class },
