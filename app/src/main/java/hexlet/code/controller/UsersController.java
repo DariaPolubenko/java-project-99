@@ -1,18 +1,16 @@
 package hexlet.code.controller;
 
-import hexlet.code.dto.CreateUserDTO;
-import hexlet.code.dto.UpdateUserDTO;
-import hexlet.code.dto.UserDTO;
+import hexlet.code.dto.user.CreateUserDTO;
+import hexlet.code.dto.user.UpdateUserDTO;
+import hexlet.code.dto.user.UserDTO;
 import hexlet.code.exception.ResourceNotFoundException;
 import hexlet.code.mapper.UserMapper;
 import hexlet.code.repository.UserRepository;
-import hexlet.code.util.UserUtils;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,11 +34,8 @@ public class UsersController {
     @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private UserUtils userUtils;
+    //@Autowired
+    //private UserUtils userUtils;
 
     private static final String AUTHORIZATION = "authentication.getName() == @userRepository.findById(#id).get().getEmail()";
 
