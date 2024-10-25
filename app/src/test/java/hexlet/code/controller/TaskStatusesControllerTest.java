@@ -94,12 +94,19 @@ class TaskStatusesControllerTest {
         data.setName("Draft");
         data.setSlug("draft");
 
-        var request = MockMvcRequestBuilders.post("/api/task_statuses")
+        var request1 = MockMvcRequestBuilders.post("/api/task_statuses")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(om.writeValueAsString(data));
+
+        mockMvc.perform(request1)
+                .andExpect(status().isUnauthorized());
+
+        var request2 = MockMvcRequestBuilders.post("/api/task_statuses")
                 .with(adminToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(data));
 
-        mockMvc.perform(request)
+        mockMvc.perform(request2)
                 .andExpect(status().isCreated());
 
         var taskStatusCreated = taskStatusRepository.findBySlug(data.getSlug()).get();
