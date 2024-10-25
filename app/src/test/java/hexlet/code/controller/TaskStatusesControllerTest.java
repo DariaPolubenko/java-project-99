@@ -71,6 +71,7 @@ class TaskStatusesControllerTest {
         var body = result.getResponse().getContentAsString();
         assertThatJson(body).isArray();
         assertThat(body).contains(taskStatus.getName());
+        assertThat(body).contains("draft");
     }
 
     @Test
