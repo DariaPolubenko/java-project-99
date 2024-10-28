@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,8 +42,10 @@ public class User implements UserDetails {
     @Column(unique = true)
     @Email
     @ToString.Include
+    @NotNull
     private String email;
 
+    @NotNull
     private String passwordDigest;
 
     @CreatedDate
