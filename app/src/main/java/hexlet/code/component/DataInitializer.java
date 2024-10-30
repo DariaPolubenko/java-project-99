@@ -1,7 +1,9 @@
 package hexlet.code.component;
 
+import hexlet.code.model.Task;
 import hexlet.code.model.TaskStatus;
 import hexlet.code.model.User;
+import hexlet.code.repository.TaskRepository;
 import hexlet.code.repository.TaskStatusRepository;
 import hexlet.code.repository.UserRepository;
 import hexlet.code.service.CustomUserDetailsService;
@@ -20,13 +22,26 @@ public class DataInitializer implements ApplicationRunner {
     private final UserRepository userRepository;
 
     @Autowired
-    private final CustomUserDetailsService userService;
+    private final TaskStatusRepository taskStatusRepository;
 
     @Autowired
-    private final TaskStatusRepository taskStatusRepository;
+    private final TaskRepository taskRepository;
+
+    @Autowired
+    private final CustomUserDetailsService userService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        createAdmin();
+
+        var slugs = new String[]{"draft", "to_review",
+                "to_be_fixed", "to_publish", "published"};
+        createTaskStatus(slugs);
+
+        createAdminsTask();
+    }
+
+    public void createAdmin() {
         if (userRepository.findByEmail("hexlet@example.com").isEmpty()) {
             var email = "hexlet@example.com";
             var userData = new User();
@@ -35,20 +50,30 @@ public class DataInitializer implements ApplicationRunner {
 
             userService.createUser(userData);
         }
-
-        taskStatusRepository.save(createTaskStatus("draft"));
-        taskStatusRepository.save(createTaskStatus("to_review"));
-        taskStatusRepository.save(createTaskStatus("to_be_fixed"));
-        taskStatusRepository.save(createTaskStatus("to_publish"));
-        taskStatusRepository.save(createTaskStatus("published"));
     }
 
-    public TaskStatus createTaskStatus(String taskStatusStr) {
-        var taskStatus = new TaskStatus();
+    public void createTaskStatus(String[] slugs) {
         var faker = new Faker();
-        var slug = faker.internet().slug();
-        taskStatus.setSlug(taskStatusStr);
-        taskStatus.setName(slug);
-        return taskStatus;
+        for (var i = 0; i < slugs.length; i++) {
+            var taskStatus = new TaskStatus();
+            var taskName = faker.internet().slug();
+            taskStatus.setSlug(slugs[i]);
+            taskStatus.setName(taskName);
+            taskStatusRepository.save(taskStatus);
+        }
+    }
+
+    public void createAdminsTask() {
+        var assignee = userRepository.findByEmail("hexlet@example.com").get();
+        var taskStatus = taskStatusRepository.findBySlug("draft").get();
+
+        var task = new Task();
+        task.setName("Task name");
+        task.setIndex(1);
+        task.setDescription("Task description");
+        task.setTaskStatus(taskStatus);
+        task.setAssignee(assignee);
+
+        taskRepository.save(task);
     }
 }
