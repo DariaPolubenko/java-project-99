@@ -19,26 +19,24 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "task")
 @EntityListeners(AuditingEntityListener.class)
-@ToString(includeFieldNames = true, onlyExplicitlyIncluded = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
 public class Task {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @ToString.Include
     @EqualsAndHashCode.Include
     private Long id;
 
-    @NotNull
+    //@NotNull
     @Size(min = 1)
     private String name;
 
     private Integer index;
     private String description;
 
-    @NotNull
-    @OneToOne
+    //@NotNull
+    @ManyToOne
     //@JoinColumn(name = "taskStatus_id")
     private TaskStatus taskStatus; //- обязательное. Связано с сущностью статуса
 
