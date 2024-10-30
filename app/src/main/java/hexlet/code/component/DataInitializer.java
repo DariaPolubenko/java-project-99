@@ -32,7 +32,7 @@ public class DataInitializer implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        createAdmin();
+        createUser();
 
         var slugs = new String[]{"draft", "to_review",
                 "to_be_fixed", "to_publish", "published"};
@@ -41,7 +41,7 @@ public class DataInitializer implements ApplicationRunner {
         createAdminsTask();
     }
 
-    public void createAdmin() {
+    public void createUser() {
         if (userRepository.findByEmail("hexlet@example.com").isEmpty()) {
             var email = "hexlet@example.com";
             var userData = new User();
