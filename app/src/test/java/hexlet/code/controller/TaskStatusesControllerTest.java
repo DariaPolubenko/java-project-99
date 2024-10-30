@@ -38,12 +38,12 @@ class TaskStatusesControllerTest {
     private WebApplicationContext wac;
 
     @Autowired
-    private TaskStatusRepository taskStatusRepository;
-
-    @Autowired
     private ObjectMapper om;
 
     private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
+
+    @Autowired
+    private TaskStatusRepository taskStatusRepository;
 
     private TaskStatus taskStatus;
 
@@ -93,7 +93,7 @@ class TaskStatusesControllerTest {
     public void testCreate() throws Exception {
         var data = new CreateTaskStatusDTO();
         data.setName("Draft");
-        data.setSlug("draft");
+        data.setSlug("draft_1");
 
         var request1 = MockMvcRequestBuilders.post("/api/task_statuses")
                 .contentType(MediaType.APPLICATION_JSON)
