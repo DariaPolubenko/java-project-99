@@ -26,14 +26,14 @@ public class TaskStatus {
     @CreatedDate
     private LocalDate createdAt;
 
-    @NotNull
+    //@NotNull
     private String name;
 
-    @NotNull
+    //@NotNull
     @Column(unique = true)
     private String slug;
 
-    @OneToOne(mappedBy = "taskStatus")
+    @OneToMany(mappedBy = "taskStatus")
     private Task task;
 
 }
