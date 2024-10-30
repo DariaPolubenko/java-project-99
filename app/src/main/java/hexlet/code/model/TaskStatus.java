@@ -30,6 +30,7 @@ public class TaskStatus {
     private String name;
 
     @NotNull
+    @Column(unique = true)
     private String slug;
 
     @OneToOne(mappedBy = "taskStatus")
