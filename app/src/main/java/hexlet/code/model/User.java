@@ -55,10 +55,10 @@ public class User implements UserDetails {
     @LastModifiedDate
     private LocalDate updatedAt;
 
-    // cascade = CascadeType.ALL
     // orphanRemoval = true
-    @OneToMany(mappedBy = "assignee")
+    @OneToMany(mappedBy = "assignee", cascade = CascadeType.MERGE)
     private List<Task> tasks = new ArrayList<>();
+
 
     public void addPost(Task task) {
         tasks.add(task);
