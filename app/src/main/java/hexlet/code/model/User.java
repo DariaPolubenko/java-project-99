@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,14 +25,12 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "users")
 @EntityListeners(AuditingEntityListener.class)
-@ToString(includeFieldNames = true, onlyExplicitlyIncluded = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @ToString.Include
     @EqualsAndHashCode.Include
     private Long id;
 
@@ -42,11 +39,10 @@ public class User implements UserDetails {
 
     @Column(unique = true)
     @Email
-    @ToString.Include
-    @NotNull
+    //@NotNull
     private String email;
 
-    @NotNull
+    //@NotNull
     private String passwordDigest;
 
     @CreatedDate
