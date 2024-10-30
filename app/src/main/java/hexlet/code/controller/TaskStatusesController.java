@@ -40,7 +40,7 @@ public class TaskStatusesController {
     @GetMapping("/{id}")
     public TaskStatusDTO show(@PathVariable Long id) {
         var taskStatus = taskStatusRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Task with id " + id + " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Task status with id " + id + " not found"));
         var taskStatusDTO = taskStatusMapper.map(taskStatus);
         return taskStatusDTO;
     }
@@ -57,7 +57,7 @@ public class TaskStatusesController {
     @PutMapping("/{id}")
     public TaskStatusDTO update(@PathVariable Long id, @Valid @RequestBody UpdateTaskStatusDTO data) throws AccessDeniedException {
         var taskStatus = taskStatusRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Task with id " + id + " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Task status with id " + id + " not found"));
 
         taskStatusMapper.update(data, taskStatus);
         taskStatusRepository.save(taskStatus);
@@ -68,7 +68,7 @@ public class TaskStatusesController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) throws AccessDeniedException {
         var taskStatus = taskStatusRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Task with id " + id + " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Task status with id " + id + " not found"));
 
         taskStatusRepository.delete(taskStatus);
     }
