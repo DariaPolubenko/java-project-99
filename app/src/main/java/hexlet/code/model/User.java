@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -53,6 +54,21 @@ public class User implements UserDetails {
 
     @LastModifiedDate
     private LocalDate updatedAt;
+
+    // cascade = CascadeType.ALL
+    // orphanRemoval = true
+    @OneToMany(mappedBy = "assignee")
+    private List<Task> tasks = new ArrayList<>();
+
+    public void addPost(Task task) {
+        tasks.add(task);
+        task.setAssignee(this);
+    }
+
+    public void removePost(Task task) {
+        tasks.remove(task);
+        task.setAssignee(null);
+    }
 
     @Override
     public String getPassword() {
