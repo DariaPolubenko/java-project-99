@@ -1,6 +1,7 @@
 package hexlet.code.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,20 +15,24 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "task_statuses")
 @EntityListeners(AuditingEntityListener.class)
-@ToString(includeFieldNames = true, onlyExplicitlyIncluded = true)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
 public class TaskStatus {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @EqualsAndHashCode.Include
-    @ToString.Include
     private Long id;
 
     @CreatedDate
     private LocalDate createdAt;
 
+    @NotNull
     private String name;
+
+    @NotNull
     private String slug;
+
+    @OneToOne(mappedBy = "taskStatus")
+    private Task task;
+
 }
