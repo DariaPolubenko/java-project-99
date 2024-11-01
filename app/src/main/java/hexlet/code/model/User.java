@@ -28,7 +28,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
-public class User implements UserDetails {
+public class User implements UserDetails, BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @EqualsAndHashCode.Include
@@ -52,9 +52,8 @@ public class User implements UserDetails {
     private LocalDate updatedAt;
 
     // orphanRemoval = true
-    @OneToMany(mappedBy = "assignee", cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "assignee", cascade = CascadeType.MERGE, orphanRemoval = true)
     private List<Task> tasks = new ArrayList<>();
-
 
     public void addPost(Task task) {
         tasks.add(task);
