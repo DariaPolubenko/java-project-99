@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import java.time.LocalDate;
 
@@ -11,15 +12,14 @@ import java.time.LocalDate;
 @Setter
 public class TaskDTO {
     private Long id;
-    private int index;
+    private JsonNullable<Integer> index;
 
-    //@JsonProperty("assignee_id")
-    private Long assigneeId;
+    @JsonProperty("assignee_id")
+    private JsonNullable<Long> assigneeId;
 
     private String title;
-    private String content;
+    private JsonNullable<String> content;
 
-    //@JsonProperty("taskStatus_status")
     private String status;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
