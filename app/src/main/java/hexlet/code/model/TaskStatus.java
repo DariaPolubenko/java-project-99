@@ -10,6 +10,11 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
@@ -17,7 +22,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-public class TaskStatus {
+public class TaskStatus implements BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @EqualsAndHashCode.Include
@@ -33,7 +38,16 @@ public class TaskStatus {
     @Column(unique = true)
     private String slug;
 
-    @OneToMany(mappedBy = "taskStatus")
-    private Task task;
+    @OneToMany(mappedBy = "taskStatus", orphanRemoval = true)
+    private List<Task> tasks = new ArrayList<>();
 
+    public void addPost(Task task) {
+        tasks.add(task);
+        task.setTaskStatus(this);
+    }
+
+    public void removePost(Task task) {
+        tasks.remove(task);
+        task.setTaskStatus(null);
+    }
 }
