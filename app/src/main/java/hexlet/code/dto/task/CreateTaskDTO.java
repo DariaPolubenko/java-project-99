@@ -10,7 +10,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 @Setter
 public class CreateTaskDTO {
     private JsonNullable<Integer> index;
-    //@JsonProperty("assignee_id")
+
+    @JsonProperty("assignee_id")
     private JsonNullable<Long> assigneeId;
 
     @NotNull
@@ -19,7 +20,6 @@ public class CreateTaskDTO {
     private JsonNullable<String> content;
 
     @NotNull
-    //@JsonProperty("taskStatus_status")
     private String status;
 }
 
