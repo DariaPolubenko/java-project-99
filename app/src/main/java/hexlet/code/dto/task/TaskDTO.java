@@ -12,10 +12,14 @@ import java.time.LocalDate;
 public class TaskDTO {
     private Long id;
     private int index;
-    @JsonProperty("assignee_id")
+
+    //@JsonProperty("assignee_id")
     private Long assigneeId;
+
     private String title;
     private String content;
+
+    //@JsonProperty("taskStatus_status")
     private String status;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
