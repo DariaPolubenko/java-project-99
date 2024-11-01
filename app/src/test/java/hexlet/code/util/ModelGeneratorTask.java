@@ -32,7 +32,7 @@ public class ModelGeneratorTask {
     private void init() {
 
         var taskStatuses = taskStatusRepository.findAll();
-        var user = userRepository.findById(Long.valueOf(1)).get();
+        var user = userRepository.findById(1L).get();
 
         Faker faker = new Faker();
         taskModel = Instancio.of(Task.class)
@@ -47,10 +47,10 @@ public class ModelGeneratorTask {
 
         createTaskDTOModel =  Instancio.of(CreateTaskDTO.class)
                 .supply(Select.field(CreateTaskDTO::getIndex), faker::number)
-                .ignore(Select.field(CreateTaskDTO::getAssigneeId))
+                .supply(Select.field(CreateTaskDTO::getAssigneeId), () -> JsonNullable.of(user.getId()))
                 .supply(Select.field(CreateTaskDTO::getTitle), () ->  "Task 2")
                 .supply(Select.field(CreateTaskDTO::getContent), () ->  JsonNullable.of("Test task 2"))
-                .supply(Select.field(CreateTaskDTO::getStatus), () ->  taskStatuses.get(2))
+                .supply(Select.field(CreateTaskDTO::getStatus), () ->  taskStatuses.get(2).getSlug())
                 .toModel();
 
         updateTaskDTOModel =  Instancio.of(UpdateTaskDTO.class)
