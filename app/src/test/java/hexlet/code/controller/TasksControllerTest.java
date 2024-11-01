@@ -150,4 +150,5 @@ public class TasksControllerTest {
         var taskStatusDeleted = taskRepository.findById(testTask.getId());
         assertThat(taskStatusDeleted).isEmpty();
     }
+
 }
