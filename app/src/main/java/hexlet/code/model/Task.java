@@ -17,12 +17,12 @@ import java.util.List;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "task")
+@Table(name = "tasks")
 @EntityListeners(AuditingEntityListener.class)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
-public class Task {
+public class Task implements BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @EqualsAndHashCode.Include
@@ -36,11 +36,12 @@ public class Task {
     private String description;
 
     //@NotNull
-    @ManyToOne
-    //@JoinColumn(name = "taskStatus_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "task_status_id")
     private TaskStatus taskStatus; //- обязательное. Связано с сущностью статуса
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "assignee_id")
     private User assignee;  //- не обязательное. Исполнитель задачи, связан с сущностью пользователя
 
     @CreatedDate
