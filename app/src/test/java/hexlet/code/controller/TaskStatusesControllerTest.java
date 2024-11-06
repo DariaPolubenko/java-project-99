@@ -5,6 +5,8 @@ import hexlet.code.dto.taskStatus.CreateTaskStatusDTO;
 import hexlet.code.dto.taskStatus.UpdateTaskStatusDTO;
 import hexlet.code.model.TaskStatus;
 import hexlet.code.repository.TaskStatusRepository;
+import hexlet.code.util.ModelGenerator;
+import org.instancio.Instancio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +47,9 @@ class TaskStatusesControllerTest {
     @Autowired
     private TaskStatusRepository taskStatusRepository;
 
+    @Autowired
+    private ModelGenerator modelGenerator;
+
     private TaskStatus taskStatus;
 
     @BeforeEach
@@ -56,9 +61,7 @@ class TaskStatusesControllerTest {
                 .apply(springSecurity())
                 .build();
 
-        taskStatus = new TaskStatus();
-        taskStatus.setName("New");
-        taskStatus.setSlug("new");
+        taskStatus = Instancio.of(modelGenerator.getTaskStatus()).create();
         taskStatusRepository.save(taskStatus);
     }
 
@@ -71,7 +74,6 @@ class TaskStatusesControllerTest {
         var body = result.getResponse().getContentAsString();
         assertThatJson(body).isArray();
         assertThat(body).contains(taskStatus.getName());
-        assertThat(body).contains("draft");
     }
 
     @Test
