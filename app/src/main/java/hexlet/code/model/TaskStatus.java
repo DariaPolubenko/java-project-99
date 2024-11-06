@@ -38,7 +38,8 @@ public class TaskStatus implements BaseEntity {
     @Column(unique = true)
     private String slug;
 
-    @OneToMany(mappedBy = "taskStatus", orphanRemoval = true)
+    //orphanRemoval = true
+    @OneToMany(mappedBy = "taskStatus", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private List<Task> tasks = new ArrayList<>();
 
     public void addPost(Task task) {
