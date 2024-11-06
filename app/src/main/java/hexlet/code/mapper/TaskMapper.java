@@ -21,8 +21,8 @@ public abstract class TaskMapper {
     @Autowired
     private TaskStatusRepository taskStatusRepository;
 
-    @Mapping(target = "name", source = "title")
     @Mapping(target = "assignee", source = "assigneeId")
+    @Mapping(target = "name", source = "title")
     @Mapping(target = "description", source = "content")
     @Mapping(target = "taskStatus", source = "status")
     public abstract Task map(CreateTaskDTO dto);
