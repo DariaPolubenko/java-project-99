@@ -52,7 +52,7 @@ public class User implements UserDetails, BaseEntity {
     private LocalDate updatedAt;
 
     // orphanRemoval = true
-    @OneToMany(mappedBy = "assignee", cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToMany(mappedBy = "assignee", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private List<Task> tasks = new ArrayList<>();
 
     public void addPost(Task task) {
