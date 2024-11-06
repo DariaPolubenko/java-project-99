@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import hexlet.code.dto.user.AuthRequest;
 import hexlet.code.model.User;
 import hexlet.code.repository.UserRepository;
-import hexlet.code.util.ModelGeneratorUser;
+import hexlet.code.util.ModelGenerator;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -45,7 +45,7 @@ class UsersControllerTest {
 	private UserRepository userRepository;
 
 	@Autowired
-	private ModelGeneratorUser modelGeneratorUser;
+	private ModelGenerator modelGenerator;
 
 	@Autowired
 	private ObjectMapper om;
@@ -64,8 +64,7 @@ class UsersControllerTest {
 				.apply(springSecurity())
 				.build();
 
-		testUser = Instancio.of(modelGeneratorUser.getUserModel())
-				.create();
+		testUser = Instancio.of(modelGenerator.getUser()).create();
 		userRepository.save(testUser);
 	}
 
@@ -127,7 +126,7 @@ class UsersControllerTest {
 
 	@Test
 	public void testCreate() throws Exception {
-		var data = Instancio.of(modelGeneratorUser.getCreateUserDTOModel())
+		var data = Instancio.of(modelGenerator.getCreateUserDTO())
 				.create();
 
 		var request = MockMvcRequestBuilders.post("/api/users")
@@ -147,7 +146,7 @@ class UsersControllerTest {
 
 	@Test
 	public void testCreateWithWrongPassword() throws Exception {
-		var data = Instancio.of(modelGeneratorUser.getCreateUserDTOModel())
+		var data = Instancio.of(modelGenerator.getCreateUserDTO())
 				.create();
 		data.setPassword("12");
 
@@ -162,7 +161,7 @@ class UsersControllerTest {
 
 	@Test
 	public void testUpdate() throws Exception {
-		var data = Instancio.of(modelGeneratorUser.getUpdateUserDTOModel())
+		var data = Instancio.of(modelGenerator.getUpdateUserDTO())
 				.create();
 
 		var request = MockMvcRequestBuilders.put("/api/users/" + testUser.getId())
@@ -192,7 +191,7 @@ class UsersControllerTest {
 
 	@Test
 	public void testUpdateWithWrongEmail() throws Exception {
-		var data = Instancio.of(modelGeneratorUser.getUpdateUserDTOModel())
+		var data = Instancio.of(modelGenerator.getUpdateUserDTO())
 				.create();
 		data.setEmail(JsonNullable.of("wrong_email"));
 
