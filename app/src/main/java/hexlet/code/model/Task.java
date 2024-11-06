@@ -36,11 +36,11 @@ public class Task implements BaseEntity {
     private String description;
 
     //@NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "task_status_id")
     private TaskStatus taskStatus; //- обязательное. Связано с сущностью статуса
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "assignee_id")
     private User assignee;  //- не обязательное. Исполнитель задачи, связан с сущностью пользователя
 
