@@ -1,8 +1,10 @@
 package hexlet.code.component;
 
+import hexlet.code.model.Label;
 import hexlet.code.model.Task;
 import hexlet.code.model.TaskStatus;
 import hexlet.code.model.User;
+import hexlet.code.repository.LabelRepository;
 import hexlet.code.repository.TaskRepository;
 import hexlet.code.repository.TaskStatusRepository;
 import hexlet.code.repository.UserRepository;
@@ -28,17 +30,22 @@ public class DataInitializer implements ApplicationRunner {
     private final TaskRepository taskRepository;
 
     @Autowired
+    private final LabelRepository labelRepository;
+
+    @Autowired
     private final CustomUserDetailsService userService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         createUser();
-
         var slugs = new String[]{"draft", "to_review",
                 "to_be_fixed", "to_publish", "published"};
-        createTaskStatus(slugs);
-
+        for (var slug : slugs) {
+            createTaskStatus(slug);
+        }
         createAdminsTask();
+        createLabel("feature");
+        createLabel("bug");
     }
 
     public void createUser() {
@@ -52,15 +59,13 @@ public class DataInitializer implements ApplicationRunner {
         }
     }
 
-    public void createTaskStatus(String[] slugs) {
+    public void createTaskStatus(String slug) {
         var faker = new Faker();
-        for (var i = 0; i < slugs.length; i++) {
-            var taskStatus = new TaskStatus();
-            var taskName = faker.internet().slug();
-            taskStatus.setSlug(slugs[i]);
-            taskStatus.setName(taskName);
-            taskStatusRepository.save(taskStatus);
-        }
+        var taskStatus = new TaskStatus();
+        var taskName = faker.internet().slug();
+        taskStatus.setSlug(slug);
+        taskStatus.setName(taskName);
+        taskStatusRepository.save(taskStatus);
     }
 
     public void createAdminsTask() {
@@ -75,5 +80,11 @@ public class DataInitializer implements ApplicationRunner {
         task.setAssignee(assignee);
 
         taskRepository.save(task);
+    }
+
+    public void createLabel(String string) {
+        var label = new Label();
+        label.setName(string);
+        labelRepository.save(label);
     }
 }
