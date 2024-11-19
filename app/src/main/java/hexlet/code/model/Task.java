@@ -46,4 +46,10 @@ public class Task implements BaseEntity {
 
     @CreatedDate
     private LocalDate createdAt;
+
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @JoinTable(name="tasks_labels",
+            joinColumns=  @JoinColumn(name="task_id", referencedColumnName="id"),
+            inverseJoinColumns= @JoinColumn(name="label_id", referencedColumnName="id") )
+    private List<Label> labels = new ArrayList<>();
 }
