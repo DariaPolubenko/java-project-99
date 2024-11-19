@@ -16,6 +16,9 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 @AllArgsConstructor
 public class DataInitializer implements ApplicationRunner {
@@ -43,9 +46,9 @@ public class DataInitializer implements ApplicationRunner {
         for (var slug : slugs) {
             createTaskStatus(slug);
         }
-        createAdminsTask();
         createLabel("feature");
         createLabel("bug");
+        createAdminsTask();
     }
 
     public void createUser() {
@@ -79,12 +82,18 @@ public class DataInitializer implements ApplicationRunner {
         task.setTaskStatus(taskStatus);
         task.setAssignee(assignee);
 
+        var labels = new ArrayList<Label>();
+        var adminLabel = createLabel("admin label");
+        labels.add(adminLabel);
+        task.setLabels(labels);
+
         taskRepository.save(task);
     }
 
-    public void createLabel(String string) {
+    public Label createLabel(String string) {
         var label = new Label();
         label.setName(string);
         labelRepository.save(label);
+        return label;
     }
 }
