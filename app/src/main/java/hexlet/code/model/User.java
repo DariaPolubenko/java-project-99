@@ -55,12 +55,12 @@ public class User implements UserDetails, BaseEntity {
     @OneToMany(mappedBy = "assignee", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private List<Task> tasks = new ArrayList<>();
 
-    public void addPost(Task task) {
+    public void addTask(Task task) {
         tasks.add(task);
         task.setAssignee(this);
     }
 
-    public void removePost(Task task) {
+    public void removeTask(Task task) {
         tasks.remove(task);
         task.setAssignee(null);
     }
