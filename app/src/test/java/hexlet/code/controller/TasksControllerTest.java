@@ -4,16 +4,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import hexlet.code.dto.task.CreateTaskDTO;
 import hexlet.code.dto.task.UpdateTaskDTO;
 import hexlet.code.mapper.TaskMapper;
+import hexlet.code.model.Label;
 import hexlet.code.model.Task;
 import hexlet.code.model.TaskStatus;
 import hexlet.code.model.User;
+import hexlet.code.repository.LabelRepository;
 import hexlet.code.repository.TaskRepository;
 import hexlet.code.repository.TaskStatusRepository;
 import hexlet.code.repository.UserRepository;
 import hexlet.code.util.ModelGenerator;
 import net.datafaker.Faker;
 import org.instancio.Instancio;
-import org.instancio.Select;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -28,6 +29,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -63,6 +65,10 @@ public class TasksControllerTest {
 
     @Autowired
     private TaskRepository taskRepository;
+
+
+    @Autowired
+    private LabelRepository labelRepository;
 
     private Task testTask;
 
@@ -131,6 +137,18 @@ public class TasksControllerTest {
     @Test
     public void testCreate() throws Exception {
         var data = createTaskDTO();
+        data.setTitle("Test title");
+        var taskStatus1 = Instancio.of(modelGenerator.getTaskStatus()).create();
+        taskStatusRepository.save(taskStatus1);
+        data.setStatus(taskStatus1.getSlug());
+
+        var label = new Label();
+        label.setName("bug");
+        labelRepository.save(label);
+        var labelList = new ArrayList<Long>();
+        labelList.add(label.getId());
+        data.setLabelIds(JsonNullable.of(labelList));
+
 
         var request1 = MockMvcRequestBuilders.post("/api/tasks")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -144,8 +162,9 @@ public class TasksControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(data));
 
-        mockMvc.perform(request2)
-                .andExpect(status().isCreated());
+       var result = mockMvc.perform(request2)
+                .andExpect(status().isCreated())
+                .andReturn();
 
         var taskCreated = taskRepository.findByName(data.getTitle()).get();
 
@@ -155,6 +174,20 @@ public class TasksControllerTest {
         assertThat(taskCreated.getName()).isEqualTo(data.getTitle());
         assertThat(taskCreated.getDescription()).isEqualTo(data.getContent().get());
         assertThat(taskCreated.getTaskStatus().getSlug()).isEqualTo(data.getStatus());
+        //assertThat(taskCreated.getLabels().get(1)).isEqualTo(data.getLabelIds());
+
+        /*
+        var body = result.getResponse().getContentAsString();
+        System.out.println(body);
+        assertThatJson(body).and(
+                v -> v.node("id").isEqualTo(testTask.getId()),
+                //v -> v.node("index").isEqualTo(testTask.getName()),
+                v -> v.node("assignee_id").isEqualTo(testTask.getAssignee().getId()),
+                v -> v.node("title").isEqualTo(testTask.getName()),
+                //v -> v.node("content").isEqualTo(testTask.getDescription()),
+                v -> v.node("status").isEqualTo(testTask.getTaskStatus().getSlug()),
+                v -> v.node("createdAt").isEqualTo(testTask.getCreatedAt().toString()));
+         */
     }
 
     @Test
