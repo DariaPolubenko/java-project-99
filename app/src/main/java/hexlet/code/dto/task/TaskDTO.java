@@ -12,13 +12,13 @@ import java.time.LocalDate;
 @Setter
 public class TaskDTO {
     private Long id;
-    private JsonNullable<Integer> index;
+    private Integer index;
 
     @JsonProperty("assignee_id")
-    private JsonNullable<Long> assigneeId;
+    private Long assigneeId;
 
     private String title;
-    private JsonNullable<String> content;
+    private String content;
 
     private String status;
 
