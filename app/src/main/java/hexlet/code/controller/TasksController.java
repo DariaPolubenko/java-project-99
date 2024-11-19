@@ -1,7 +1,9 @@
 package hexlet.code.controller;
 
+import hexlet.code.component.TaskSpecification;
 import hexlet.code.dto.task.CreateTaskDTO;
 import hexlet.code.dto.task.TaskDTO;
+import hexlet.code.dto.task.TaskParamsDTO;
 import hexlet.code.dto.task.UpdateTaskDTO;
 import hexlet.code.exception.ResourceNotFoundException;
 import hexlet.code.mapper.TaskMapper;
@@ -25,9 +27,13 @@ public class TasksController {
     @Autowired
     private TaskMapper taskMapper;
 
+    @Autowired
+    private TaskSpecification specBuilder;
+
     @GetMapping
-    public ResponseEntity<List<TaskDTO>> index() {
-        var tasks = taskRepository.findAll();
+    public ResponseEntity<List<TaskDTO>> index(TaskParamsDTO params) {
+        var spec = specBuilder.build(params);
+        var tasks = taskRepository.findAll(spec);
         var tasksDTO = tasks.stream()
                 .map(taskMapper::map)
                 .toList();
