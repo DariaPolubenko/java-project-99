@@ -4,11 +4,16 @@ import hexlet.code.dto.task.CreateTaskDTO;
 import hexlet.code.dto.task.TaskDTO;
 import hexlet.code.dto.task.UpdateTaskDTO;
 import hexlet.code.exception.ResourceNotFoundException;
+import hexlet.code.model.Label;
 import hexlet.code.model.Task;
 import hexlet.code.model.TaskStatus;
+import hexlet.code.repository.LabelRepository;
 import hexlet.code.repository.TaskStatusRepository;
 import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Mapper(
@@ -21,10 +26,14 @@ public abstract class TaskMapper {
     @Autowired
     private TaskStatusRepository taskStatusRepository;
 
+    @Autowired
+    private LabelRepository labelRepository;
+
     @Mapping(target = "assignee", source = "assigneeId")
     @Mapping(target = "name", source = "title")
     @Mapping(target = "description", source = "content")
     @Mapping(target = "taskStatus", source = "status")
+    @Mapping(target = "labels", source = "labelIds")
     public abstract Task map(CreateTaskDTO dto);
 
     @Mapping(source = "assignee.id", target = "assigneeId")
@@ -41,10 +50,19 @@ public abstract class TaskMapper {
 
     @Mapping(target = "name", source = "title")
     @Mapping(target = "description", source = "content")
+    @Mapping(target = "labels", source = "labelIds")
     public abstract void update(UpdateTaskDTO dto, @MappingTarget Task model);
 
     public TaskStatus toEntity(String slug) {
         return taskStatusRepository.findBySlug(slug)
                 .orElseThrow(() -> new ResourceNotFoundException("Status not found"));
+    }
+
+    public List<Label> toEntity(List<Long> labelIds) {
+        return labelIds == null
+                ? new ArrayList<>()
+                : labelIds.stream()
+                .map(id -> labelRepository.findById(id).orElseThrow())
+                .toList();
     }
 }
