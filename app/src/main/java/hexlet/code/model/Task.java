@@ -1,18 +1,17 @@
 package hexlet.code.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -49,7 +48,7 @@ public class Task implements BaseEntity {
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     @JoinTable(name="tasks_labels",
-            joinColumns=  @JoinColumn(name="task_id", referencedColumnName="id"),
-            inverseJoinColumns= @JoinColumn(name="label_id", referencedColumnName="id") )
-    private List<Label> labels = new ArrayList<>();
+            joinColumns=  @JoinColumn(name="task_id"), //, referencedColumnName="id"),
+            inverseJoinColumns= @JoinColumn(name="label_id")) //referencedColumnName="id"))
+    private Set<Label> labels = new LinkedHashSet<>();
 }
