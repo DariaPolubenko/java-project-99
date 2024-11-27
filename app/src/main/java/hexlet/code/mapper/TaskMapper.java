@@ -13,7 +13,10 @@ import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Mapper(
@@ -58,11 +61,11 @@ public abstract class TaskMapper {
                 .orElseThrow(() -> new ResourceNotFoundException("Status not found"));
     }
 
-    public List<Label> toEntity(List<Long> labelIds) {
+    public Set<Label> toEntity(Set<Long> labelIds) {
         return labelIds == null
-                ? new ArrayList<>()
+                ? new LinkedHashSet<>()
                 : labelIds.stream()
                 .map(id -> labelRepository.findById(id).orElseThrow())
-                .toList();
+                .collect(Collectors.toSet());
     }
 }
