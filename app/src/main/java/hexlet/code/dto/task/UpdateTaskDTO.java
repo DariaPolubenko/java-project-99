@@ -13,5 +13,5 @@ import java.util.Set;
 public class UpdateTaskDTO {
     private JsonNullable<String> title;
     private JsonNullable<String> content;
-    private JsonNullable<Set<Long>> labelIds;
+    private JsonNullable<Set<Long>> taskLabelIds;
 }
