@@ -16,8 +16,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Component
 @AllArgsConstructor
@@ -82,7 +82,7 @@ public class DataInitializer implements ApplicationRunner {
         task.setTaskStatus(taskStatus);
         task.setAssignee(assignee);
 
-        var labels = new ArrayList<Label>();
+        Set labels = new LinkedHashSet<>();
         var adminLabel = createLabel("admin label");
         labels.add(adminLabel);
         task.setLabels(labels);
