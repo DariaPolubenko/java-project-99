@@ -171,6 +171,10 @@ public class LabelControllerTest {
 
     @Test
     public void testDelete() throws Exception {
+
+        mockMvc.perform(delete("/api/labels/" + label.getId()))
+                .andExpect(status().isUnauthorized());
+
         mockMvc.perform(delete("/api/labels/" + label.getId()).with(adminToken))
                 .andExpect(status().isOk());
 
