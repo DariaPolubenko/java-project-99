@@ -37,16 +37,16 @@ public class Task implements BaseEntity {
     //@NotNull
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "task_status_id")
-    private TaskStatus taskStatus; //- обязательное. Связано с сущностью статуса
+    private TaskStatus taskStatus;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "assignee_id")
-    private User assignee;  //- не обязательное. Исполнитель задачи, связан с сущностью пользователя
+    private User assignee;
 
     @CreatedDate
     private LocalDate createdAt;
 
-    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(name="tasks_labels",
             joinColumns=  @JoinColumn(name="task_id"), //, referencedColumnName="id"),
             inverseJoinColumns= @JoinColumn(name="label_id")) //referencedColumnName="id"))
