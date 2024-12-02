@@ -13,5 +13,6 @@ import java.util.Set;
 public class UpdateTaskDTO {
     private JsonNullable<String> title;
     private JsonNullable<String> content;
+    private String status;
     private JsonNullable<Set<Long>> taskLabelIds;
 }
