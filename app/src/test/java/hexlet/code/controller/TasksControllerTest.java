@@ -29,7 +29,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
+import java.util.HashSet;
 
 import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -145,9 +145,9 @@ public class TasksControllerTest {
         var label = new Label();
         label.setName("bug");
         labelRepository.save(label);
-        var labelList = new ArrayList<Long>();
+        var labelList = new HashSet<Long>();
         labelList.add(label.getId());
-        data.setLabelIds(JsonNullable.of(labelList));
+        data.setTaskLabelIds(JsonNullable.of(labelList));
 
 
         var request1 = MockMvcRequestBuilders.post("/api/tasks")
@@ -217,6 +217,65 @@ public class TasksControllerTest {
         var taskStatusDeleted = taskRepository.findById(testTask.getId());
         assertThat(taskStatusDeleted).isEmpty();
     }
+
+    @Test
+    public void taskTitleFilter() throws Exception {
+        var result = mockMvc.perform(get("/api/tasks?titleCont=test").with(adminToken))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        var body = result.getResponse().getContentAsString();
+        assertThatJson(body).isArray();
+        assertThat(body).contains(testTask.getName());
+        assertThat(body).contains(testTask.getId().toString());
+    }
+
+    @Test
+    public void taskAssigneeFilter() throws Exception {
+        var result = mockMvc.perform(get("/api/tasks?assigneeId=" + testTask.getId()).with(adminToken))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        var body = result.getResponse().getContentAsString();
+        assertThatJson(body).isArray();
+        assertThat(body).contains(testTask.getName());
+        assertThat(body).contains(testTask.getId().toString());
+    }
+
+    @Test
+    public void taskStatusFilter() throws Exception {
+        var result = mockMvc.perform(get("/api/tasks?status=" + testTask.getTaskStatus().getSlug()).with(adminToken))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        var body = result.getResponse().getContentAsString();
+        assertThatJson(body).isArray();
+        assertThat(body).contains(testTask.getName());
+        assertThat(body).contains(testTask.getId().toString());
+    }
+
+    @Test
+    public void taskLabelFilter() throws Exception {
+        var label = new Label();
+        label.setName("test label");
+        labelRepository.save(label);
+
+        var labelList = new HashSet<Label>();
+        labelList.add(label);
+        testTask.setLabels(labelList);
+        taskRepository.save(testTask);
+
+        var result = mockMvc.perform(get("/api/tasks?labelId="+ label.getId()).with(adminToken))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        var body = result.getResponse().getContentAsString();
+        assertThatJson(body).isArray();
+        assertThat(body).contains(testTask.getName());
+        assertThat(body).contains(testTask.getId().toString());
+        System.out.println(body);
+    }
+
 
     public CreateTaskDTO createTaskDTO() {
         var data =  new CreateTaskDTO();
