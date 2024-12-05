@@ -25,3 +25,4 @@ rsa:
 sentry:
   dsn: https://9b8f2f5dbcbc45075cb07dd618f7024a@o4508415448383488.ingest.de.sentry.io/4508415461163088
   tracesSampleRate: 1.0
+  exception-resolver-order: -2147483647
