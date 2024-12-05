@@ -1,5 +1,6 @@
 plugins {
 	application
+	jacoco
 	id("org.springframework.boot") version "3.3.4"
 	id("io.spring.dependency-management") version "1.1.6"
 	id("com.github.ben-manes.versions") version "0.50.0"
@@ -19,6 +20,7 @@ sentry {
 	projectName = "java-spring-boot"
 	authToken = System.getenv("SENTRY_AUTH_TOKEN")
 }
+
 tasks.sentryBundleSourcesJava {
 	enabled = System.getenv("SENTRY_AUTH_TOKEN") != null
 }
@@ -69,4 +71,21 @@ dependencies {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.test {
+    useJUnitPlatform()
+    testLogging {
+        exceptionFormat = TestExceptionFormat.FULL
+        events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
+        // showStackTraces = true
+        // showCauses = true
+        showStandardStreams = true
+    }
+}
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required = true
+    }
 }
