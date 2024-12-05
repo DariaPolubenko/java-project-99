@@ -38,14 +38,12 @@ public class TasksController {
         var tasksDTO = tasks.stream()
                 .map(taskMapper::map)
                 .toList();
-/*
+
         try {
             throw new Exception("This is a test.");
         } catch (Exception e) {
             Sentry.captureException(e);
         }
-
- */
 
         return ResponseEntity.ok()
                 .header("X-Total-Count", String.valueOf(tasks.size()))
