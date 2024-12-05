@@ -7,15 +7,20 @@ plugins {
 	id("io.sentry.jvm.gradle") version "4.14.1"
 }
 
-sentry {
-	// Generates a JVM (Java, Kotlin, etc.) source bundle and uploads your source code to Sentry.
-	// This enables source context, allowing you to see your source
-	// code as part of your stack traces in Sentry.
-	includeSourceContext = true
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
 
+sentry {
+	includeSourceContext = true
 	org = "daria-p6"
 	projectName = "java-spring-boot"
 	authToken = System.getenv("SENTRY_AUTH_TOKEN")
+}
+tasks.sentryBundleSourcesJava {
+	enabled = System.getenv("SENTRY_AUTH_TOKEN") != null
 }
 
 group = "hexlet.code"
@@ -58,6 +63,8 @@ dependencies {
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("net.javacrumbs.json-unit:json-unit-assertj:3.2.7")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+	implementation("io.sentry:sentry-spring:7.18.1")
+	implementation("io.sentry:sentry-spring-boot-starter-jakarta:7.18.1")
 }
 
 tasks.withType<Test> {
