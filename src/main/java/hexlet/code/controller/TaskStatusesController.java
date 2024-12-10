@@ -63,6 +63,7 @@ public class TaskStatusesController {
         return taskStatusDTO;
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) throws AccessDeniedException {
         var taskStatus = taskStatusRepository.findById(id)

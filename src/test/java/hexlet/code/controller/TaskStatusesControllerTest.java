@@ -141,7 +141,7 @@ class TaskStatusesControllerTest {
     @Test
     public void testDelete() throws Exception {
         mockMvc.perform(delete("/api/task_statuses/" + taskStatus.getId()).with(adminToken))
-                .andExpect(status().isOk());
+                .andExpect(status().isNoContent());
 
         var taskStatusDeleted = taskStatusRepository.findById(taskStatus.getId());
         assertThat(taskStatusDeleted).isEmpty();

@@ -60,6 +60,7 @@ public class LabelController {
         return labelDTO;
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) throws AccessDeniedException {
         var taskStatus = labelRepository.findById(id)

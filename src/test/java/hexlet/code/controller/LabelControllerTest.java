@@ -176,7 +176,7 @@ public class LabelControllerTest {
                 .andExpect(status().isUnauthorized());
 
         mockMvc.perform(delete("/api/labels/" + label.getId()).with(adminToken))
-                .andExpect(status().isOk());
+                .andExpect(status().isNoContent());
 
         var labelDeleted = labelRepository.findById(label.getId());
         assertThat(labelDeleted).isEmpty();
