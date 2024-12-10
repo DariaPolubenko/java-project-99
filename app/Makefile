@@ -10,18 +10,10 @@ report:
 update:
 	./gradlew dependencyUpdates
 
-.PHONY: build
-
 setup:
 	npm install
 	./gradlew wrapper --gradle-version 8.7
 	./gradlew build
-
-frontend:
-	make -C frontend start
-
-backend:
-	./gradlew bootRun --args='--spring.profiles.active=dev'
 
 clean:
 	./gradlew clean
@@ -53,10 +45,5 @@ update-js-deps:
 check-java-deps:
 	./gradlew dependencyUpdates -Drevision=release
 
-# generate-migrations:
-# 	gradle diffChangeLog
+.PHONY: build
 
-# db-migrate:
-# 	./gradlew update
-
-.PHONY: build frontend
