@@ -67,8 +67,8 @@ public class UsersController {
     //не очень нравится решение с AUTHORIZATION, так как повторно обновить емаил не дает,
     //нужно выйти и зайти заново, чтобы обновился токен, котрый генерируется на основе email
     //наверное, правильнее ипсользовать роли, но пока не разбиралась с тем, как их назначать
-    @PutMapping("/{id}")
     @PreAuthorize(AUTHORIZATION)
+    @PutMapping("/{id}")
     public UserDTO update(@PathVariable Long id, @Valid @RequestBody UpdateUserDTO data) throws AccessDeniedException {
         var user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
