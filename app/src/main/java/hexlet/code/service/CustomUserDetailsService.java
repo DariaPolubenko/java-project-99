@@ -33,7 +33,6 @@ public class CustomUserDetailsService implements UserDetailsManager {
         userRepository.save(user);
     }
 
-
     @Override
     public void updateUser(UserDetails user) {
         // TODO Auto-generated method stub
