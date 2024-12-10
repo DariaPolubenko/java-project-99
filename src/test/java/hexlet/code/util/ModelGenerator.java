@@ -64,6 +64,10 @@ public class ModelGenerator {
         updateUserDTO = Instancio.of(UpdateUserDTO.class)
                 .supply(Select.field(UpdateUserDTO::getEmail), () -> JsonNullable.of(faker.internet().emailAddress()))
                 .supply(Select.field(UpdateUserDTO::getPassword), () -> JsonNullable.of(faker.internet().password()))
+                .supply(Select.field(UpdateUserDTO::getFirstName), () -> JsonNullable.of(faker.name().firstName()))
+                .supply(Select.field(UpdateUserDTO::getLastName), () -> JsonNullable.of(faker.name().lastName()))
+
+
                 .toModel();
     }
 
