@@ -34,9 +34,6 @@ public class UsersController {
     @Autowired
     private UserMapper userMapper;
 
-    //@Autowired
-    //private UserUtils userUtils;
-
     private static final String AUTHORIZATION = "authentication.getName() == @userRepository.findById(#id).get().getEmail()";
 
     @GetMapping
@@ -45,7 +42,6 @@ public class UsersController {
         var usersDTO = users.stream()
                 .map(userMapper::map)
                 .toList();
-
         return ResponseEntity.ok()
                 .header("X-Total-Count", String.valueOf(users.size()))
                 .body(usersDTO);
@@ -76,7 +72,6 @@ public class UsersController {
     public UserDTO update(@PathVariable Long id, @Valid @RequestBody UpdateUserDTO data) throws AccessDeniedException {
         var user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
-
         userMapper.update(data, user);
         userRepository.save(user);
         var userDTO = userMapper.map(user);
@@ -88,18 +83,6 @@ public class UsersController {
     public void delete(@PathVariable Long id) throws AccessDeniedException {
         var user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
-
         userRepository.delete(user);
     }
-
-    /*
-    public void getPrivateAccess(User user) {
-        var currentUser = userUtils.getCurrentUser().getEmail();
-        var admin = "hexlet@example.com";
-
-        if (!(currentUser.equals(admin) || currentUser.equals(user.getEmail()))) {
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
-        }
-    }
-     */
 }
