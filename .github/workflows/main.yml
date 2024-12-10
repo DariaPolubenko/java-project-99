@@ -18,3 +18,5 @@ jobs:
           gradle-version: 8.7
           
       - run: cd app && ./gradlew clean build
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.SENTRY_AUTH_TOKEN}}
