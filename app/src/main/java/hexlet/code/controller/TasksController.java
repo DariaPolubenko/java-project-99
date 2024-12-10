@@ -8,7 +8,6 @@ import hexlet.code.dto.task.UpdateTaskDTO;
 import hexlet.code.exception.ResourceNotFoundException;
 import hexlet.code.mapper.TaskMapper;
 import hexlet.code.repository.TaskRepository;
-import io.sentry.Sentry;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,12 +37,13 @@ public class TasksController {
         var tasksDTO = tasks.stream()
                 .map(taskMapper::map)
                 .toList();
-
+        /*
         try {
             throw new Exception("This is a test.");
         } catch (Exception e) {
             Sentry.captureException(e);
         }
+         */
 
         return ResponseEntity.ok()
                 .header("X-Total-Count", String.valueOf(tasks.size()))
@@ -71,7 +71,6 @@ public class TasksController {
     public TaskDTO update(@PathVariable Long id, @Valid @RequestBody UpdateTaskDTO data) throws AccessDeniedException {
         var task = taskRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Task with id " + id + " not found"));
-
         taskMapper.update(data, task);
         taskRepository.save(task);
         var taskDTO = taskMapper.map(task);
@@ -82,7 +81,6 @@ public class TasksController {
     public void delete(@PathVariable Long id) throws AccessDeniedException {
         var taskStatus = taskRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Task with id " + id + " not found"));
-
         taskRepository.delete(taskStatus);
     }
 }
