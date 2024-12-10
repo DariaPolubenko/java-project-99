@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - TasksControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>TasksControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/hexlet.code.controller.html">hexlet.code.controller</a> &gt; TasksControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">9</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">4.887s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">taskAssigneeFilter()</td>
+<td class="success">0.079s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">taskLabelFilter()</td>
+<td class="success">0.180s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">taskStatusFilter()</td>
+<td class="success">0.103s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">taskTitleFilter()</td>
+<td class="success">0.096s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCreate()</td>
+<td class="success">0.209s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDelete()</td>
+<td class="success">0.086s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testIndex()</td>
+<td class="success">3.861s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testShow()</td>
+<td class="success">0.138s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUpdate()</td>
+<td class="success">0.135s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>17:51:30.458 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [hexlet.code.controller.TasksControllerTest]: TasksControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:51:30.730 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration hexlet.code.AppApplication for test class hexlet.code.controller.TasksControllerTest
+17:51:31.116 [Test worker] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+?[32m :: Spring Boot :: ?[39m              ?[2m (v3.3.4)?[0;39m
+
+?[2m2024-12-10T17:51:31.745+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mh.code.controller.TasksControllerTest   ?[0;39m ?[2m:?[0;39m Starting TasksControllerTest using Java 21.0.1 with PID 11830 (started by new in /Users/new/projects/java-project-99/app)
+?[2m2024-12-10T17:51:31.747+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mh.code.controller.TasksControllerTest   ?[0;39m ?[2m:?[0;39m No active profile set, falling back to 1 default profile: &quot;development&quot;
+?[2m2024-12-10T17:51:33.372+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.d.r.c.RepositoryConfigurationDelegate?[0;39m ?[2m:?[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[2m2024-12-10T17:51:33.483+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.d.r.c.RepositoryConfigurationDelegate?[0;39m ?[2m:?[0;39m Finished Spring Data repository scanning in 97 ms. Found 4 JPA repository interfaces.
+?[2m2024-12-10T17:51:34.772+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.hibernate.jpa.internal.util.LogHelper ?[0;39m ?[2m:?[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+?[2m2024-12-10T17:51:34.907+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36morg.hibernate.Version                   ?[0;39m ?[2m:?[0;39m HHH000412: Hibernate ORM core version 6.5.3.Final
+?[2m2024-12-10T17:51:34.995+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.h.c.internal.RegionFactoryInitiator   ?[0;39m ?[2m:?[0;39m HHH000026: Second-level cache disabled
+?[2m2024-12-10T17:51:35.611+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.o.j.p.SpringPersistenceUnitInfo     ?[0;39m ?[2m:?[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
+?[2m2024-12-10T17:51:35.672+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mcom.zaxxer.hikari.HikariDataSource      ?[0;39m ?[2m:?[0;39m HikariPool-1 - Starting...
+?[2m2024-12-10T17:51:36.188+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mcom.zaxxer.hikari.pool.HikariPool       ?[0;39m ?[2m:?[0;39m HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:jdbc user=SA
+?[2m2024-12-10T17:51:36.190+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mcom.zaxxer.hikari.HikariDataSource      ?[0;39m ?[2m:?[0;39m HikariPool-1 - Start completed.
+?[2m2024-12-10T17:51:38.419+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.h.e.t.j.p.i.JtaPlatformInitiator      ?[0;39m ?[2m:?[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table labels (id bigint generated by default as identity, created_at date, name varchar(1000), primary key (id))
+Hibernate: create table task_statuses (id bigint generated by default as identity, created_at date, name varchar(255), slug varchar(255), primary key (id))
+Hibernate: create table tasks (id bigint generated by default as identity, created_at date, description varchar(255), index integer, name varchar(255), assignee_id bigint, task_status_id bigint, primary key (id))
+Hibernate: create table tasks_labels (task_id bigint not null, label_id bigint not null, primary key (task_id, label_id))
+Hibernate: create table users (id bigint generated by default as identity, created_at date, email varchar(255), first_name varchar(255), last_name varchar(255), password_digest varchar(255), updated_at date, primary key (id))
+Hibernate: alter table if exists task_statuses drop constraint if exists UKs9havha7265fb7s24h1oe937x
+Hibernate: alter table if exists task_statuses add constraint UKs9havha7265fb7s24h1oe937x unique (slug)
+Hibernate: alter table if exists users drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+Hibernate: alter table if exists users add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: alter table if exists tasks add constraint FKekr1dgiqktpyoip3qmp6lxsit foreign key (assignee_id) references users
+Hibernate: alter table if exists tasks add constraint FK7xndk7y2uk29wdu734xyutbqe foreign key (task_status_id) references task_statuses
+Hibernate: alter table if exists tasks_labels add constraint FK5eg3urx4p1n0hkcqv8x04wibn foreign key (label_id) references labels
+Hibernate: alter table if exists tasks_labels add constraint FK9qrs86gyw7ctgqiwqvr9jkf0l foreign key (task_id) references tasks
+?[2m2024-12-10T17:51:38.598+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mj.LocalContainerEntityManagerFactoryBean?[0;39m ?[2m:?[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[2m2024-12-10T17:51:39.933+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36meGlobalAuthenticationAutowiredConfigurer?[0;39m ?[2m:?[0;39m Eagerly initializing {securityConfig=hexlet.code.config.SecurityConfig$$SpringCGLIB$$0@491dfd8e}
+?[2m2024-12-10T17:51:39.979+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36meAuthenticationProviderManagerConfigurer?[0;39m ?[2m:?[0;39m Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthProvider
+?[2m2024-12-10T17:51:39.981+03:00?[0;39m ?[33m WARN?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mr$InitializeUserDetailsManagerConfigurer?[0;39m ?[2m:?[0;39m Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+?[2m2024-12-10T17:51:40.204+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.a.w.s.WelcomePageHandlerMapping   ?[0;39m ?[2m:?[0;39m Adding welcome page: class path resource [static/index.html]
+?[2m2024-12-10T17:51:40.613+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.web.DefaultSecurityFilterChain    ?[0;39m ?[2m:?[0;39m Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, BearerTokenAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+?[2m2024-12-10T17:51:41.480+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.a.h2.H2ConsoleAutoConfiguration   ?[0;39m ?[2m:?[0;39m H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:jdbc'
+?[2m2024-12-10T17:51:41.619+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:41.620+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:41.622+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 2 ms
+?[2m2024-12-10T17:51:41.670+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mh.code.controller.TasksControllerTest   ?[0;39m ?[2m:?[0;39m Started TasksControllerTest in 10.566 seconds (process running for 13.308)
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.email=?
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into labels (created_at,name,id) values (?,?,default)
+Hibernate: insert into labels (created_at,name,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.email=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.slug=?
+Hibernate: insert into labels (created_at,name,id) values (?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into tasks_labels (task_id,label_id) values (?,?)
+?[2m2024-12-10T17:51:44.741+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:44.743+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:44.746+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 3 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+?[2m2024-12-10T17:51:45.635+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:45.648+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:45.677+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:45.679+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing GET /api/tasks
+?[2m2024-12-10T17:51:45.680+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:45.681+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:45.691+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:45.693+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:45.696+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:45.697+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:45.698+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:45.698+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:45.699+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:45.699+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:45.699+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:45.700+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:45.702+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:45.702+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:45.703+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:45.704+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:45.704+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:45.704+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:45.706+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing GET /api/tasks
+?[2m2024-12-10T17:51:45.709+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on GET /api/tasks using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:45.712+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured GET /api/tasks
+Hibernate: select t1_0.id,t1_0.assignee_id,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name,t1_0.task_status_id from tasks t1_0 where 1=1 and 1=1 and 1=1 and 1=1
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+?[2m2024-12-10T17:51:46.044+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+?[2m2024-12-10T17:51:46.348+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:46.348+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:46.350+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 2 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+?[2m2024-12-10T17:51:46.408+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:46.408+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:46.410+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:46.410+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing GET /api/tasks/3
+?[2m2024-12-10T17:51:46.410+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:46.410+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:46.410+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:46.411+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:46.411+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:46.411+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:46.411+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:46.411+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:46.412+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:46.412+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:46.412+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:46.412+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:46.413+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:46.413+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:46.413+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:46.413+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:46.414+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:46.414+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:46.414+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing GET /api/tasks/3
+?[2m2024-12-10T17:51:46.415+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on GET /api/tasks/3 using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:46.415+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured GET /api/tasks/3
+Hibernate: select t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id left join tasks_labels l1_0 on t1_0.id=l1_0.task_id left join labels l1_1 on l1_1.id=l1_0.label_id left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.id=?
+?[2m2024-12-10T17:51:46.436+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+{&quot;id&quot;:3,&quot;title&quot;:&quot;test name&quot;,&quot;status&quot;:&quot;sapiente_eligendi&quot;,&quot;createdAt&quot;:&quot;2024-12-10&quot;,&quot;taskLabelIds&quot;:[],&quot;assignee_id&quot;:3}
+?[2m2024-12-10T17:51:46.488+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:46.488+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:46.492+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 4 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+?[2m2024-12-10T17:51:46.549+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:46.549+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:46.549+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:46.550+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing GET /api/tasks?status=dolores_atque
+?[2m2024-12-10T17:51:46.550+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:46.550+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:46.550+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:46.551+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:46.551+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:46.551+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:46.551+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:46.551+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:46.552+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:46.552+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:46.552+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:46.552+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:46.552+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:46.552+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:46.553+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:46.553+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:46.553+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:46.553+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:46.553+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing GET /api/tasks?status=dolores_atque
+?[2m2024-12-10T17:51:46.554+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on GET /api/tasks?status=dolores_atque using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:46.554+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured GET /api/tasks?status=dolores_atque
+Hibernate: select t1_0.id,t1_0.assignee_id,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name,t1_0.task_status_id from tasks t1_0 join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where 1=1 and 1=1 and ts1_0.slug like ? escape '' and 1=1
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+?[2m2024-12-10T17:51:46.584+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+?[2m2024-12-10T17:51:46.596+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:46.596+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:46.597+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 1 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+?[2m2024-12-10T17:51:46.649+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:46.650+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:46.650+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:46.650+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing GET /api/tasks?assigneeId=5
+?[2m2024-12-10T17:51:46.651+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:46.651+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:46.651+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:46.651+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:46.651+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:46.651+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:46.652+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:46.652+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:46.652+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:46.652+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:46.652+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:46.652+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:46.653+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:46.653+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:46.653+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:46.653+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:46.653+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:46.653+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:46.653+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing GET /api/tasks?assigneeId=5
+?[2m2024-12-10T17:51:46.654+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on GET /api/tasks?assigneeId=5 using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:46.654+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured GET /api/tasks?assigneeId=5
+Hibernate: select t1_0.id,t1_0.assignee_id,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name,t1_0.task_status_id from tasks t1_0 where 1=1 and t1_0.assignee_id=? and 1=1 and 1=1
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+?[2m2024-12-10T17:51:46.665+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+?[2m2024-12-10T17:51:46.678+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:46.679+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:46.682+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 3 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into labels (created_at,name,id) values (?,?,default)
+Hibernate: select t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id left join tasks_labels l1_0 on t1_0.id=l1_0.task_id left join labels l1_1 on l1_1.id=l1_0.label_id left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.id=?
+Hibernate: select t1_0.task_status_id,t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id where t1_0.task_status_id=?
+Hibernate: select t1_0.assignee_id,t1_0.id,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.assignee_id=?
+Hibernate: select l1_0.id,l1_0.created_at,l1_0.name from labels l1_0 where l1_0.id=?
+Hibernate: insert into tasks_labels (task_id,label_id) values (?,?)
+?[2m2024-12-10T17:51:46.830+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:46.831+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:46.831+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:46.831+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing GET /api/tasks?labelId=4
+?[2m2024-12-10T17:51:46.831+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:46.832+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:46.832+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:46.832+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:46.832+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:46.832+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:46.832+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:46.832+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:46.833+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:46.833+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:46.833+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:46.833+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:46.833+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:46.834+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:46.834+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:46.834+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:46.834+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:46.834+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:46.834+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing GET /api/tasks?labelId=4
+?[2m2024-12-10T17:51:46.835+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on GET /api/tasks?labelId=4 using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:46.835+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured GET /api/tasks?labelId=4
+Hibernate: select t1_0.id,t1_0.assignee_id,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name,t1_0.task_status_id from tasks t1_0 join tasks_labels l1_0 on t1_0.id=l1_0.task_id where 1=1 and 1=1 and 1=1 and l1_0.label_id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+?[2m2024-12-10T17:51:46.851+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+[{&quot;id&quot;:6,&quot;title&quot;:&quot;test name&quot;,&quot;status&quot;:&quot;cumque_error&quot;,&quot;createdAt&quot;:&quot;2024-12-10&quot;,&quot;taskLabelIds&quot;:[4],&quot;assignee_id&quot;:6}]
+?[2m2024-12-10T17:51:46.859+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:46.860+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:46.861+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 1 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+?[2m2024-12-10T17:51:46.898+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:46.899+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:46.899+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:46.900+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing GET /api/tasks?titleCont=test
+?[2m2024-12-10T17:51:46.900+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:46.900+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:46.900+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:46.900+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:46.901+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:46.901+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:46.901+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:46.902+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:46.902+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:46.902+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:46.902+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:46.902+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:46.902+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:46.903+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:46.903+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:46.903+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:46.903+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:46.904+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:46.904+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing GET /api/tasks?titleCont=test
+?[2m2024-12-10T17:51:46.904+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on GET /api/tasks?titleCont=test using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:46.904+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured GET /api/tasks?titleCont=test
+Hibernate: select t1_0.id,t1_0.assignee_id,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name,t1_0.task_status_id from tasks t1_0 where t1_0.name like ? escape '' and 1=1 and 1=1 and 1=1
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+?[2m2024-12-10T17:51:46.949+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+?[2m2024-12-10T17:51:46.960+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:46.960+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:46.961+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 1 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into labels (created_at,name,id) values (?,?,default)
+?[2m2024-12-10T17:51:47.020+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:47.020+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing POST /api/tasks
+?[2m2024-12-10T17:51:47.020+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:47.021+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:47.021+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:47.021+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:47.021+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:47.021+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:47.022+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:47.022+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:47.022+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:47.023+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:47.023+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:47.024+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:47.024+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:47.024+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:47.025+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:47.028+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Set SecurityContextHolder to AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_ANONYMOUS]]
+?[2m2024-12-10T17:51:47.028+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:47.028+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:47.028+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing POST /api/tasks
+?[2m2024-12-10T17:51:47.029+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on POST /api/tasks using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:47.030+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.ExceptionTranslationFilter    ?[0;39m ?[2m:?[0;39m Sending AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_ANONYMOUS]] to authentication entry point since access is denied
+
+org.springframework.security.access.AccessDeniedException: Access Denied
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:98) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter.doFilterInternal(BearerTokenAuthenticationFilter.java:128) ~[spring-security-oauth2-resource-server-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.3.jar:6.3.3]
+	at org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurer$DelegateFilter.doFilter(SecurityMockMvcConfigurer.java:132) ~[spring-security-test-6.3.3.jar:6.3.3]
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201) ~[spring-test-6.1.13.jar:6.1.13]
+	at hexlet.code.controller.TasksControllerTest.testCreate(TasksControllerTest.java:157) ~[test/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[na:na]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92) ~[na:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63) ~[na:na]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[na:na]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121) ~[na:na]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[na:na]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
+
+?[2m2024-12-10T17:51:47.050+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.w.a.DelegatingAuthenticationEntryPoint?[0;39m ?[2m:?[0;39m Trying to match using Or [org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer$BearerTokenRequestMatcher@5088e345, RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest], And [Not [MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@10adc98e, matchingMediaTypes=[text/html], useEquals=false, ignoredMediaTypes=[]]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@10adc98e, matchingMediaTypes=[application/atom+xml, application/x-www-form-urlencoded, application/json, application/octet-stream, application/xml, multipart/form-data, text/xml], useEquals=false, ignoredMediaTypes=[*/*]]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@10adc98e, matchingMediaTypes=[*/*], useEquals=true, ignoredMediaTypes=[]]]
+?[2m2024-12-10T17:51:47.051+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.w.a.DelegatingAuthenticationEntryPoint?[0;39m ?[2m:?[0;39m Match found! Executing org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationEntryPoint@32ed2ef
+?[2m2024-12-10T17:51:47.051+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+?[2m2024-12-10T17:51:47.052+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:47.052+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:47.053+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:47.053+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing POST /api/tasks
+?[2m2024-12-10T17:51:47.053+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:47.054+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:47.054+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:47.054+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:47.054+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:47.055+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:47.055+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:47.055+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:47.055+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:47.055+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:47.056+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:47.056+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:47.056+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:47.056+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:47.056+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:47.056+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:47.057+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:47.057+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:47.057+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing POST /api/tasks
+?[2m2024-12-10T17:51:47.057+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on POST /api/tasks using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:47.058+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured POST /api/tasks
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.slug=?
+Hibernate: select l1_0.id,l1_0.created_at,l1_0.name from labels l1_0 where l1_0.id=?
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into tasks_labels (task_id,label_id) values (?,?)
+?[2m2024-12-10T17:51:47.146+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+Hibernate: select t1_0.id,t1_0.assignee_id,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name,t1_0.task_status_id from tasks t1_0 where t1_0.name=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password_digest,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from task_statuses ts1_0 where ts1_0.id=?
+Hibernate: select l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name from tasks_labels l1_0 join labels l1_1 on l1_1.id=l1_0.label_id where l1_0.task_id=?
+?[2m2024-12-10T17:51:47.170+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:47.170+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:47.171+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 1 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+?[2m2024-12-10T17:51:47.214+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:47.215+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:47.216+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:47.217+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing DELETE /api/tasks/10
+?[2m2024-12-10T17:51:47.217+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:47.218+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:47.218+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:47.218+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:47.218+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:47.219+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:47.219+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:47.219+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:47.219+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:47.219+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:47.220+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:47.220+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:47.220+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:47.221+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:47.221+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:47.221+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:47.222+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:47.222+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:47.222+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing DELETE /api/tasks/10
+?[2m2024-12-10T17:51:47.223+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on DELETE /api/tasks/10 using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:47.223+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured DELETE /api/tasks/10
+Hibernate: select t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id left join tasks_labels l1_0 on t1_0.id=l1_0.task_id left join labels l1_1 on l1_1.id=l1_0.label_id left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.id=?
+Hibernate: select t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id left join tasks_labels l1_0 on t1_0.id=l1_0.task_id left join labels l1_1 on l1_1.id=l1_0.label_id left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.id=?
+Hibernate: delete from tasks where id=?
+?[2m2024-12-10T17:51:47.248+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+Hibernate: select t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id left join tasks_labels l1_0 on t1_0.id=l1_0.task_id left join labels l1_1 on l1_1.id=l1_0.label_id left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.id=?
+?[2m2024-12-10T17:51:47.260+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.b.t.m.w.SpringBootMockServletContext?[0;39m ?[2m:?[0;39m Initializing Spring TestDispatcherServlet ''
+?[2m2024-12-10T17:51:47.260+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Initializing Servlet ''
+?[2m2024-12-10T17:51:47.262+03:00?[0;39m ?[32m INFO?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.t.web.servlet.TestDispatcherServlet ?[0;39m ?[2m:?[0;39m Completed initialization in 1 ms
+Hibernate: insert into users (created_at,email,first_name,last_name,password_digest,updated_at,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into task_statuses (created_at,name,slug,id) values (?,?,?,default)
+Hibernate: insert into tasks (assignee_id,created_at,description,index,name,task_status_id,id) values (?,?,?,?,?,?,default)
+?[2m2024-12-10T17:51:47.325+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.o.s.r.a.JwtGrantedAuthoritiesConverter?[0;39m ?[2m:?[0;39m Looking for scopes in claim scope
+?[2m2024-12-10T17:51:47.327+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.s.w.c.SupplierDeferredSecurityContext?[0;39m ?[2m:?[0;39m Created SecurityContextImpl [Null authentication]
+?[2m2024-12-10T17:51:47.328+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@bc5f1a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@241f78b0, org.springframework.security.web.context.SecurityContextHolderFilter@123702d, org.springframework.security.web.header.HeaderWriterFilter@3bce28da, org.springframework.security.web.authentication.logout.LogoutFilter@7867221d, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@e37fdd1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b4ff495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b665276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f53b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594c4bc6, org.springframework.security.web.session.SessionManagementFilter@23344ec3, org.springframework.security.web.access.ExceptionTranslationFilter@609ba4a9, org.springframework.security.web.access.intercept.AuthorizationFilter@2aea6d45]] (1/1)
+?[2m2024-12-10T17:51:47.329+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Securing PUT /api/tasks/11
+?[2m2024-12-10T17:51:47.329+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking DisableEncodeUrlFilter (1/13)
+?[2m2024-12-10T17:51:47.329+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking WebAsyncManagerIntegrationFilter (2/13)
+?[2m2024-12-10T17:51:47.329+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderFilter (3/13)
+?[2m2024-12-10T17:51:47.329+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking HeaderWriterFilter (4/13)
+?[2m2024-12-10T17:51:47.329+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking LogoutFilter (5/13)
+?[2m2024-12-10T17:51:47.329+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.logout.LogoutFilter           ?[0;39m ?[2m:?[0;39m Did not match request to Or [Ant [pattern='/logout', GET], Ant [pattern='/logout', POST], Ant [pattern='/logout', PUT], Ant [pattern='/logout', DELETE]]
+?[2m2024-12-10T17:51:47.330+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BearerTokenAuthenticationFilter (6/13)
+?[2m2024-12-10T17:51:47.330+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36m.s.r.w.a.BearerTokenAuthenticationFilter?[0;39m ?[2m:?[0;39m Did not process request since did not find bearer token
+?[2m2024-12-10T17:51:47.330+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking BasicAuthenticationFilter (7/13)
+?[2m2024-12-10T17:51:47.330+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.www.BasicAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not process authentication request since failed to find username and password in Basic Authorization header
+?[2m2024-12-10T17:51:47.330+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking RequestCacheAwareFilter (8/13)
+?[2m2024-12-10T17:51:47.330+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SecurityContextHolderAwareRequestFilter (9/13)
+?[2m2024-12-10T17:51:47.331+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AnonymousAuthenticationFilter (10/13)
+?[2m2024-12-10T17:51:47.331+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking SessionManagementFilter (11/13)
+?[2m2024-12-10T17:51:47.331+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.a.AnonymousAuthenticationFilter ?[0;39m ?[2m:?[0;39m Did not set SecurityContextHolder since already authenticated JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[SCOPE_read]]
+?[2m2024-12-10T17:51:47.332+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36ms.CompositeSessionAuthenticationStrategy?[0;39m ?[2m:?[0;39m Preparing session with ChangeSessionIdAuthenticationStrategy (1/1)
+?[2m2024-12-10T17:51:47.332+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking ExceptionTranslationFilter (12/13)
+?[2m2024-12-10T17:51:47.332+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Invoking AuthorizationFilter (13/13)
+?[2m2024-12-10T17:51:47.333+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Authorizing PUT /api/tasks/11
+?[2m2024-12-10T17:51:47.333+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mestMatcherDelegatingAuthorizationManager?[0;39m ?[2m:?[0;39m Checking authorization on PUT /api/tasks/11 using org.springframework.security.authorization.AuthenticatedAuthorizationManager@595cc4af
+?[2m2024-12-10T17:51:47.334+03:00?[0;39m ?[32mDEBUG?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.security.web.FilterChainProxy       ?[0;39m ?[2m:?[0;39m Secured PUT /api/tasks/11
+Hibernate: select t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id left join tasks_labels l1_0 on t1_0.id=l1_0.task_id left join labels l1_1 on l1_1.id=l1_0.label_id left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.id=?
+Hibernate: select t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id left join tasks_labels l1_0 on t1_0.id=l1_0.task_id left join labels l1_1 on l1_1.id=l1_0.label_id left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.id=?
+Hibernate: select t1_0.task_status_id,t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id where t1_0.task_status_id=?
+Hibernate: select t1_0.assignee_id,t1_0.id,t1_0.created_at,t1_0.description,t1_0.index,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.assignee_id=?
+Hibernate: update tasks set assignee_id=?,created_at=?,description=?,index=?,name=?,task_status_id=? where id=?
+?[2m2024-12-10T17:51:47.381+03:00?[0;39m ?[32mTRACE?[0;39m ?[35m11830?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[2m?[0;39m?[36mo.s.s.w.header.writers.HstsHeaderWriter ?[0;39m ?[2m:?[0;39m Not injecting HSTS header since it did not match request to [Is Secure]
+Hibernate: select t1_0.id,a1_0.id,a1_0.created_at,a1_0.email,a1_0.first_name,a1_0.last_name,a1_0.password_digest,a1_0.updated_at,t1_0.created_at,t1_0.description,t1_0.index,l1_0.task_id,l1_1.id,l1_1.created_at,l1_1.name,t1_0.name,ts1_0.id,ts1_0.created_at,ts1_0.name,ts1_0.slug from tasks t1_0 left join users a1_0 on a1_0.id=t1_0.assignee_id left join tasks_labels l1_0 on t1_0.id=l1_0.task_id left join labels l1_1 on l1_1.id=l1_0.label_id left join task_statuses ts1_0 on ts1_0.id=t1_0.task_status_id where t1_0.id=?
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (/Users/new/Desktop/Develop/untitled folder/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.19/154da3a65b4f4a909d3e5bdec55d1b2b4cbb6ce1/byte-buddy-agent-1.14.19.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.10.2</a> at 10 дек. 2024 г., 17:51:49</p>
+</div>
+</div>
+</body>
+</html>

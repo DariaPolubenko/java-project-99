@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: "postgresql://base_ns3w_user:YnXbzWuxsyCwBuBmRCKvy2sFadE26YVW@dpg-ct8q0qogph6c73dgob50-a/base_ns3w"
+    username: base_ns3w_user
+    password: YnXbzWuxsyCwBuBmRCKvy2sFadE26YVW
