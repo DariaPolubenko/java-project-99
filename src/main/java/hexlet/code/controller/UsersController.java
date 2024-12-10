@@ -78,6 +78,7 @@ public class UsersController {
         return userDTO;
     }
 
+    @PreAuthorize(AUTHORIZATION)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) throws AccessDeniedException {
