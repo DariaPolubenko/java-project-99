@@ -1,8 +1,7 @@
 /idea
 .DS_Store
-
 ELP.md
-.gradle
+.gradle/
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
@@ -22,6 +21,9 @@ bin/
 
 ### IntelliJ IDEA ###
 .idea
+/.idea
+.idea/
+
 *.iws
 *.iml
 *.ipr
@@ -69,7 +71,6 @@ dist-ssr
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
 .DS_Store
 *.suo
 *.ntvs*
