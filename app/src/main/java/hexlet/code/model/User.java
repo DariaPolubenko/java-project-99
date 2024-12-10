@@ -7,7 +7,6 @@ import jakarta.validation.constraints.Email;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -99,5 +98,4 @@ public class User implements UserDetails, BaseEntity {
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
 }
