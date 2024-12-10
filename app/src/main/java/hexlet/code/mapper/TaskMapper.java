@@ -34,25 +34,27 @@ public abstract class TaskMapper {
     @Mapping(target = "name", source = "title")
     @Mapping(target = "description", source = "content")
     @Mapping(target = "taskStatus", source = "status")
-    @Mapping(target = "labels", source = "taskLabelIds")
+    @Mapping(target = "labels", source = "taskLabelIds", qualifiedByName = "toEntityLabel")
     public abstract Task map(CreateTaskDTO dto);
 
     @Mapping(source = "assignee.id", target = "assigneeId")
     @Mapping(target = "title", source = "name")
     @Mapping(target = "content", source = "description")
     @Mapping(target = "status", source = "taskStatus.slug")
+    @Mapping(target = "taskLabelIds", source = "labels", qualifiedByName = "toEntitySetIds")
     public abstract TaskDTO map(Task model);
 
     @Mapping(target = "assignee", source = "assigneeId")
     @Mapping(target = "name", source = "title")
     @Mapping(target = "description", source = "content")
     @Mapping(target = "taskStatus", source = "status")
+    @Mapping(target = "labels", source = "taskLabelIds", qualifiedByName = "toEntityLabel")
     public abstract Task map(TaskDTO model);
 
     @Mapping(target = "name", source = "title")
     @Mapping(target = "description", source = "content")
     @Mapping(target = "taskStatus", source = "status")
-    @Mapping(target = "labels", source = "taskLabelIds")
+    @Mapping(target = "labels", source = "taskLabelIds", qualifiedByName = "toEntityLabel")
     public abstract void update(UpdateTaskDTO dto, @MappingTarget Task model);
 
     public TaskStatus toEntity(String slug) {
@@ -60,11 +62,21 @@ public abstract class TaskMapper {
                 .orElseThrow(() -> new ResourceNotFoundException("Status not found"));
     }
 
-    public Set<Label> toEntity(Set<Long> labelIds) {
+    @Named("toEntityLabel")
+    public Set<Label> toEntityLabel(Set<Long> labelIds) {
         return labelIds == null
                 ? new LinkedHashSet<>()
                 : labelIds.stream()
                 .map(id -> labelRepository.findById(id).orElseThrow())
+                .collect(Collectors.toSet());
+    }
+
+    @Named("toEntitySetIds")
+    public Set<Long> toEntitySetIds(Set<Label> labels) {
+        return labels == null
+                ? new LinkedHashSet<>()
+                : labels.stream()
+                .map(label -> label.getId())
                 .collect(Collectors.toSet());
     }
 }
