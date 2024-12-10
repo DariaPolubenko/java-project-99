@@ -28,7 +28,6 @@ public class LabelController {
     public ResponseEntity<List<LabelDTO>> index() {
         var labels = labelRepository.findAll();
         var labelsDTO = labels.stream().map(labelMapper::map).toList();
-
         return ResponseEntity.ok()
                 .header("X-Total-Count", String.valueOf(labels.size()))
                 .body(labelsDTO);
@@ -55,7 +54,6 @@ public class LabelController {
     public LabelDTO update(@PathVariable Long id, @Valid @RequestBody UpdateLabelDTO data) throws AccessDeniedException {
         var label = labelRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Label with id " + id + " not found"));
-
         labelMapper.update(data, label);
         labelRepository.save(label);
         var labelDTO = labelMapper.map(label);
@@ -66,7 +64,6 @@ public class LabelController {
     public void delete(@PathVariable Long id) throws AccessDeniedException {
         var taskStatus = labelRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Label with id " + id + " not found"));
-
         labelRepository.delete(taskStatus);
     }
 }
