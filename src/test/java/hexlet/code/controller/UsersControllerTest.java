@@ -183,8 +183,7 @@ class UsersControllerTest {
 
 		var user = userRepository.findById(testUser.getId()).get();
 
-		assertThat(user.getId()).isEqualTo(testUser.getId());
-		assertThat(user.getFirstName()).isEqualTo(testUser.getFirstName());
+		assertThat(user.getFirstName()).isEqualTo(data.getFirstName().get());
 		assertThat(user.getEmail()).isEqualTo(data.getEmail().get());
 		assertThat(user.getPasswordDigest()).isEqualTo(data.getPassword().get());
 	}
