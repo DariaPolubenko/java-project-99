@@ -11,9 +11,6 @@ report:
 	make -C app report
 
 setup:
-	cd app
-	npm install
-	./gradlew wrapper --gradle-version 8.7
-	./gradlew build
+	make -C app setup
 
 .PHONY: build
