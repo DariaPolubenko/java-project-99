@@ -31,7 +31,6 @@ public class TaskStatusesController {
         var taskStatusesDTO = taskStatuses.stream()
                 .map(taskStatusMapper::map)
                 .toList();
-
         return ResponseEntity.ok()
                 .header("X-Total-Count", String.valueOf(taskStatuses.size()))
                 .body(taskStatusesDTO);
@@ -58,7 +57,6 @@ public class TaskStatusesController {
     public TaskStatusDTO update(@PathVariable Long id, @Valid @RequestBody UpdateTaskStatusDTO data) throws AccessDeniedException {
         var taskStatus = taskStatusRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Task status with id " + id + " not found"));
-
         taskStatusMapper.update(data, taskStatus);
         taskStatusRepository.save(taskStatus);
         var taskStatusDTO = taskStatusMapper.map(taskStatus);
@@ -69,7 +67,6 @@ public class TaskStatusesController {
     public void delete(@PathVariable Long id) throws AccessDeniedException {
         var taskStatus = taskStatusRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Task status with id " + id + " not found"));
-
         taskStatusRepository.delete(taskStatus);
     }
 }
