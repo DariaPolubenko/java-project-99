@@ -211,7 +211,7 @@ class UsersControllerTest {
 		var tokenTestUser = jwt().jwt(builder -> builder.subject(testUser.getEmail()));
 
 		mockMvc.perform(delete("/api/users/" + testUser.getId()).with(tokenTestUser))
-				.andExpect(status().isOk());
+				.andExpect(status().isNoContent());
 
 		var user = userRepository.findById(testUser.getId());
 		assertThat(user).isEmpty();
