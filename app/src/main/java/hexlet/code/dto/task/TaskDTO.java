@@ -19,7 +19,6 @@ public class TaskDTO {
 
     private String title;
     private String content;
-
     private String status;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
