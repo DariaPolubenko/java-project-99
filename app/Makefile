@@ -13,7 +13,6 @@ update:
 .PHONY: build
 
 setup:
-	cd app
 	npm install
 	./gradlew wrapper --gradle-version 8.7
 	./gradlew build
