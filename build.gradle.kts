@@ -101,3 +101,7 @@ tasks.jacocoTestReport {
 		xml.required = true
 	}
 }
+
+tasks.test {
+	jvmArgs("-XX:+EnableDynamicAgentLoading")
+}
