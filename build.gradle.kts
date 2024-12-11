@@ -1,5 +1,6 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.gradle.internal.impldep.org.fusesource.jansi.AnsiRenderer.test
 
 plugins {
 	java
