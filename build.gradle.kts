@@ -10,7 +10,6 @@ plugins {
 	id("io.freefair.lombok") version "8.6"
 	id("io.sentry.jvm.gradle") version "4.14.1"
 	id("application")
-
 }
 
 buildscript {
@@ -41,6 +40,7 @@ version = "0.0.1-SNAPSHOT"
 
 application {
 	mainClass.set("hexlet.code.AppApplication")
+	applicationDefaultJvmArgs = listOf("-XX:+EnableDynamicAgentLoading")
 }
 
 java {
