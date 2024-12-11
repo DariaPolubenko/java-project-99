@@ -1,6 +1,5 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
-import org.gradle.internal.impldep.org.fusesource.jansi.AnsiRenderer.test
 
 plugins {
 	java
@@ -85,6 +84,7 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 
+	/*
 	testLogging {
 		exceptionFormat = TestExceptionFormat.FULL
 		events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
@@ -92,6 +92,7 @@ tasks.withType<Test> {
 		// showCauses = true
 		showStandardStreams = true
 	}
+	 */
 	finalizedBy(tasks.jacocoTestReport)
 }
 
