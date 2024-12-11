@@ -6,6 +6,7 @@ plugins {
 	id("com.github.ben-manes.versions") version "0.50.0"
 	id("io.freefair.lombok") version "8.6"
 	id("io.sentry.jvm.gradle") version "4.14.1"
+	id("com.ryandens.javaagent-test") version "0.5.1"
 }
 
 buildscript {
@@ -67,6 +68,7 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
 	implementation("io.sentry:sentry-spring:7.18.1")
 	implementation("io.sentry:sentry-spring-boot-starter-jakarta:7.18.1")
+	testJavaagent("net.bytebuddy:byte-buddy-agent:1.14.15")
 }
 
 tasks.withType<Test> {
