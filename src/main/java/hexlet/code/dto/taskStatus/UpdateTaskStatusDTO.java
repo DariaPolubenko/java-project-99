@@ -10,11 +10,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UpdateTaskStatusDTO {
-    @NotBlank
     @Size(min = 1)
     private String name;
 
-    @NotBlank
     @Column(unique = true)
     private String slug;
 }
