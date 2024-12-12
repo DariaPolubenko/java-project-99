@@ -1,6 +1,7 @@
 package hexlet.code.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,14 +27,13 @@ public class Task implements BaseEntity {
     @EqualsAndHashCode.Include
     private Long id;
 
-    //@NotNull
+    @NotBlank
     @Size(min = 1)
     private String name;
 
     private Integer index;
     private String description;
 
-    //@NotNull
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "task_status_id")
     private TaskStatus taskStatus;
