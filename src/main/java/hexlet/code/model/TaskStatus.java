@@ -1,6 +1,7 @@
 package hexlet.code.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -31,10 +32,10 @@ public class TaskStatus implements BaseEntity {
     @CreatedDate
     private LocalDate createdAt;
 
-    //@NotNull
+    @NotBlank
     private String name;
 
-    //@NotNull
+    @NotBlank
     @Column(unique = true)
     private String slug;
 
