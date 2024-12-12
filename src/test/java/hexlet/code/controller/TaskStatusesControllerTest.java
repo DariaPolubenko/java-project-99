@@ -122,6 +122,7 @@ class TaskStatusesControllerTest {
     @Test
     public void testUpdate() throws Exception {
         var data = new UpdateTaskStatusDTO();
+        data.setSlug("test");
         data.setName("published");
 
         var request = MockMvcRequestBuilders.put("/api/task_statuses/" + taskStatus.getId())
@@ -134,8 +135,8 @@ class TaskStatusesControllerTest {
 
         var taskStatusUpdated = taskStatusRepository.findById(taskStatus.getId()).get();
 
-        assertThat(taskStatusUpdated.getId()).isEqualTo(taskStatus.getId());
         assertThat(taskStatusUpdated.getName()).isEqualTo(data.getName());
+        assertThat(taskStatusUpdated.getSlug()).isEqualTo(data.getSlug());
     }
 
     @Test
