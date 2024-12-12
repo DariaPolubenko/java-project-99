@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,12 +37,12 @@ public class User implements UserDetails, BaseEntity {
     private String firstName;
     private String lastName;
 
+    @NotBlank
     @Column(unique = true)
     @Email
-    //@NotNull
     private String email;
 
-    //@NotNull
+    @NotBlank
     private String passwordDigest;
 
     @CreatedDate
