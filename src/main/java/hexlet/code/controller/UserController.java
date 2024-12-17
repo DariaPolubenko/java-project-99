@@ -5,7 +5,8 @@ import hexlet.code.dto.user.UpdateUserDTO;
 import hexlet.code.dto.user.UserDTO;
 import hexlet.code.service.UserService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,11 +25,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@RequiredArgsConstructor
 public class UserController {
-
-    @Autowired
+     @NonNull
     private UserService userService;
-
     private static final String AUTHORIZATION = "authentication.getName() == @userRepository.findById(#id).get().getEmail()";
 
     @GetMapping

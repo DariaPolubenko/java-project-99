@@ -8,6 +8,7 @@ import hexlet.code.mapper.LabelMapper;
 import hexlet.code.repository.LabelRepository;
 import hexlet.code.service.LabelService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/labels")
+@AllArgsConstructor
 public class LabelController {
-    @Autowired
     private LabelService labelService;
 
     @GetMapping
