@@ -8,21 +8,16 @@ import hexlet.code.dto.task.UpdateTaskDTO;
 import hexlet.code.exception.ResourceNotFoundException;
 import hexlet.code.mapper.TaskMapper;
 import hexlet.code.repository.TaskRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class TaskService {
-
-    @Autowired
     private TaskRepository taskRepository;
-
-    @Autowired
     private TaskMapper taskMapper;
-
-    @Autowired
     private TaskSpecification specBuilder;
 
     public List<TaskDTO> getAll(TaskParamsDTO params) {
