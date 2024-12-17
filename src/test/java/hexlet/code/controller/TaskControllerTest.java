@@ -211,7 +211,7 @@ public class TaskControllerTest {
 
     @Test
     public void taskAssigneeFilter() throws Exception {
-        var result = mockMvc.perform(get("/api/tasks?assigneeId=" + testTask.getId()).with(adminToken))
+        var result = mockMvc.perform(get("/api/tasks?assigneeId=" + testTask.getAssignee().getId()).with(adminToken))
                 .andExpect(status().isOk())
                 .andReturn();
 
