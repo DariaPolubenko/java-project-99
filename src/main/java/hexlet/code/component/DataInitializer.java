@@ -22,20 +22,10 @@ import java.util.Set;
 @Component
 @AllArgsConstructor
 public class DataInitializer implements ApplicationRunner {
-
-    @Autowired
     private final UserRepository userRepository;
-
-    @Autowired
     private final TaskStatusRepository taskStatusRepository;
-
-    @Autowired
     private final TaskRepository taskRepository;
-
-    @Autowired
     private final LabelRepository labelRepository;
-
-    @Autowired
     private final CustomUserDetailsService userService;
 
     @Override
@@ -43,9 +33,11 @@ public class DataInitializer implements ApplicationRunner {
         createUser();
         var slugs = new String[]{"draft", "to_review",
                 "to_be_fixed", "to_publish", "published"};
+
         for (var slug : slugs) {
             createTaskStatus(slug);
         }
+
         createLabel("feature");
         createLabel("bug");
         createAdminsTask();
