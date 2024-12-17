@@ -2,6 +2,7 @@ package hexlet.code.util;
 
 import hexlet.code.model.User;
 import hexlet.code.repository.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -9,8 +10,8 @@ import org.springframework.web.context.annotation.RequestScope;
 
 @RequestScope
 @Component
+@AllArgsConstructor
 public class UserUtils {
-    @Autowired
     private UserRepository userRepository;
 
     public User getCurrentUser() {

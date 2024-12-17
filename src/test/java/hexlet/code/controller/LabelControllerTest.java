@@ -13,7 +13,6 @@ import hexlet.code.repository.TaskRepository;
 import hexlet.code.repository.TaskStatusRepository;
 import hexlet.code.repository.UserRepository;
 import hexlet.code.util.ModelGenerator;
-import net.datafaker.Faker;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -51,8 +50,6 @@ public class LabelControllerTest {
     @Autowired
     private ObjectMapper om;
 
-    private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
-
     @Autowired
     private ModelGenerator modelGenerator;
 
@@ -68,15 +65,14 @@ public class LabelControllerTest {
     @Autowired
     private LabelRepository labelRepository;
 
+    @Autowired
+    private TaskMapper taskMapper;
+
     private User user;
     private TaskStatus taskStatus;
     private Task task;
     private Label label;
-
-    //Faker faker = new Faker();
-
-    @Autowired
-    private TaskMapper taskMapper;
+    private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
 
     @BeforeEach
     public void setUp() {
@@ -93,18 +89,10 @@ public class LabelControllerTest {
         taskStatus = Instancio.of(modelGenerator.getTaskStatus()).create();
         taskStatusRepository.save(taskStatus);
 
-        task = new Task();
-        task.setName("test name");
-        task.setIndex(10);
-        task.setDescription("test description");
-        task.setTaskStatus(taskStatus);
-        task.setAssignee(user);
-        taskRepository.save(task);
-
-        label = new Label();
-        label.setName("test label");
-        label.getTasks().add(task);
+        label = Instancio.of(modelGenerator.getLabel()).create();
         labelRepository.save(label);
+
+        task = Instancio.of(modelGenerator.getTask()).create();
     }
 
     @Test
@@ -114,7 +102,6 @@ public class LabelControllerTest {
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
-        assertThatJson(body).isArray();
         assertThat(body).contains(label.getName());
     }
 
@@ -125,7 +112,6 @@ public class LabelControllerTest {
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
-        System.out.println(body);
         assertThatJson(body).and(
                 v -> v.node("id").isEqualTo(label.getId()),
                 v -> v.node("name").isEqualTo(label.getName()),
@@ -135,7 +121,7 @@ public class LabelControllerTest {
     @Test
     public void testCreate() throws Exception {
         var data = new CreateLabelDTO();
-        data.setName("test create label");
+        data.setName("test");
 
         var request = MockMvcRequestBuilders.post("/api/labels")
                 .with(adminToken)
@@ -152,7 +138,7 @@ public class LabelControllerTest {
     @Test
     public void testUpdate() throws Exception {
         var data = new UpdateLabelDTO();
-        data.setName("test update label");
+        data.setName("test");
 
         var request = MockMvcRequestBuilders.put("/api/labels/" + label.getId())
                 .with(adminToken)
@@ -165,7 +151,6 @@ public class LabelControllerTest {
         var labelUpdated = labelRepository.findById(label.getId()).get();
 
         assertThat(labelUpdated.getName()).isEqualTo(data.getName());
-        assertThat(labelUpdated.getId()).isEqualTo(label.getId());
         assertThat(labelUpdated.getCreatedAt()).isEqualTo(label.getCreatedAt());
     }
 

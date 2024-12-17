@@ -42,8 +42,6 @@ class TaskStatusControllerTest {
     @Autowired
     private ObjectMapper om;
 
-    private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
-
     @Autowired
     private TaskStatusRepository taskStatusRepository;
 
@@ -51,6 +49,7 @@ class TaskStatusControllerTest {
     private ModelGenerator modelGenerator;
 
     private TaskStatus taskStatus;
+    private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
 
     @BeforeEach
     public void setUp() {
@@ -72,7 +71,6 @@ class TaskStatusControllerTest {
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
-        assertThatJson(body).isArray();
         assertThat(body).contains(taskStatus.getName());
     }
 

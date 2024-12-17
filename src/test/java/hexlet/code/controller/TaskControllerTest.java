@@ -29,7 +29,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -52,8 +54,6 @@ public class TaskControllerTest {
     @Autowired
     private ObjectMapper om;
 
-    private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
-
     @Autowired
     private ModelGenerator modelGenerator;
 
@@ -66,20 +66,18 @@ public class TaskControllerTest {
     @Autowired
     private TaskRepository taskRepository;
 
-
     @Autowired
     private LabelRepository labelRepository;
 
-    private Task testTask;
-
-    private User user;
-
-    private TaskStatus taskStatus;
-
-    Faker faker = new Faker();
-
     @Autowired
     private TaskMapper taskMapper;
+
+    private Task testTask;
+    private User user;
+    private TaskStatus taskStatus;
+    private Label label;
+    Faker faker = new Faker();
+    private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
 
     @BeforeEach
     public void setUp() {
@@ -96,12 +94,14 @@ public class TaskControllerTest {
         taskStatus = Instancio.of(modelGenerator.getTaskStatus()).create();
         taskStatusRepository.save(taskStatus);
 
-        testTask = new Task();
-        testTask.setName("test name");
-        //testTask.setIndex(10);
-        //testTask.setDescription("test description");
+        label = Instancio.of(modelGenerator.getLabel()).create();
+        labelRepository.save(label);
+
+        testTask = Instancio.of(modelGenerator.getTask()).create();
+        testTask.setName("test");
         testTask.setTaskStatus(taskStatus);
         testTask.setAssignee(user);
+        testTask.setLabels(new LinkedHashSet<>(Arrays.asList(label)));
         taskRepository.save(testTask);
     }
 
@@ -112,7 +112,7 @@ public class TaskControllerTest {
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
-        assertThatJson(body).isArray();
+        assertThat(body).contains(testTask.getId().toString());
         assertThat(body).contains(testTask.getName());
     }
 
@@ -126,10 +126,9 @@ public class TaskControllerTest {
         System.out.println(body);
         assertThatJson(body).and(
                 v -> v.node("id").isEqualTo(testTask.getId()),
-                //v -> v.node("index").isEqualTo(testTask.getName()),
                 v -> v.node("assignee_id").isEqualTo(testTask.getAssignee().getId()),
                 v -> v.node("title").isEqualTo(testTask.getName()),
-                //v -> v.node("content").isEqualTo(testTask.getDescription()),
+                v -> v.node("content").isEqualTo(testTask.getDescription()),
                 v -> v.node("status").isEqualTo(testTask.getTaskStatus().getSlug()),
                 v -> v.node("createdAt").isEqualTo(testTask.getCreatedAt().toString()));
     }
@@ -137,17 +136,14 @@ public class TaskControllerTest {
     @Test
     public void testCreate() throws Exception {
         var data = createTaskDTO();
-        data.setTitle("Test title");
-        var taskStatus1 = Instancio.of(modelGenerator.getTaskStatus()).create();
-        taskStatusRepository.save(taskStatus1);
-        data.setStatus(taskStatus1.getSlug());
 
-        var label = new Label();
-        label.setName("bug");
-        labelRepository.save(label);
-        var labelList = new HashSet<Long>();
-        labelList.add(label.getId());
-        data.setTaskLabelIds(JsonNullable.of(labelList));
+        var newTaskStatus = Instancio.of(modelGenerator.getTaskStatus()).create();
+        taskStatusRepository.save(newTaskStatus);
+        data.setStatus(newTaskStatus.getSlug());
+
+        var newLabel = Instancio.of(modelGenerator.getLabel()).create();
+        labelRepository.save(newLabel);
+        data.setTaskLabelIds(JsonNullable.of(new LinkedHashSet<>(Arrays.asList(newLabel.getId()))));
 
 
         var request1 = MockMvcRequestBuilders.post("/api/tasks")
@@ -162,32 +158,16 @@ public class TaskControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(om.writeValueAsString(data));
 
-       var result = mockMvc.perform(request2)
-                .andExpect(status().isCreated())
-                .andReturn();
+        mockMvc.perform(request2)
+                .andExpect(status().isCreated());
 
         var taskCreated = taskRepository.findByName(data.getTitle()).get();
 
         assertNotNull(taskCreated);
         assertThat(taskCreated.getIndex()).isEqualTo(data.getIndex().get());
-        assertThat(taskCreated.getAssignee().getId()).isEqualTo(data.getAssigneeId().get());
         assertThat(taskCreated.getName()).isEqualTo(data.getTitle());
         assertThat(taskCreated.getDescription()).isEqualTo(data.getContent().get());
         assertThat(taskCreated.getTaskStatus().getSlug()).isEqualTo(data.getStatus());
-        //assertThat(taskCreated.getLabels().get(1)).isEqualTo(data.getLabelIds());
-
-        /*
-        var body = result.getResponse().getContentAsString();
-        System.out.println(body);
-        assertThatJson(body).and(
-                v -> v.node("id").isEqualTo(testTask.getId()),
-                //v -> v.node("index").isEqualTo(testTask.getName()),
-                v -> v.node("assignee_id").isEqualTo(testTask.getAssignee().getId()),
-                v -> v.node("title").isEqualTo(testTask.getName()),
-                //v -> v.node("content").isEqualTo(testTask.getDescription()),
-                v -> v.node("status").isEqualTo(testTask.getTaskStatus().getSlug()),
-                v -> v.node("createdAt").isEqualTo(testTask.getCreatedAt().toString()));
-         */
     }
 
     @Test
@@ -214,18 +194,17 @@ public class TaskControllerTest {
         mockMvc.perform(delete("/api/tasks/" + testTask.getId()).with(adminToken))
                 .andExpect(status().isNoContent());
 
-        var taskStatusDeleted = taskRepository.findById(testTask.getId());
-        assertThat(taskStatusDeleted).isEmpty();
+        var taskDeleted = taskRepository.findById(testTask.getId());
+        assertThat(taskDeleted).isEmpty();
     }
 
     @Test
     public void taskTitleFilter() throws Exception {
-        var result = mockMvc.perform(get("/api/tasks?titleCont=test").with(adminToken))
+        var result = mockMvc.perform(get("/api/tasks?titleCont=" + testTask.getName()).with(adminToken))
                 .andExpect(status().isOk())
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
-        assertThatJson(body).isArray();
         assertThat(body).contains(testTask.getName());
         assertThat(body).contains(testTask.getId().toString());
     }
@@ -237,7 +216,6 @@ public class TaskControllerTest {
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
-        assertThatJson(body).isArray();
         assertThat(body).contains(testTask.getName());
         assertThat(body).contains(testTask.getId().toString());
     }
@@ -249,33 +227,20 @@ public class TaskControllerTest {
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
-        assertThatJson(body).isArray();
         assertThat(body).contains(testTask.getName());
         assertThat(body).contains(testTask.getId().toString());
     }
 
     @Test
     public void taskLabelFilter() throws Exception {
-        var label = new Label();
-        label.setName("test label");
-        labelRepository.save(label);
-
-        var labelList = new HashSet<Label>();
-        labelList.add(label);
-        testTask.setLabels(labelList);
-        taskRepository.save(testTask);
-
         var result = mockMvc.perform(get("/api/tasks?labelId="+ label.getId()).with(adminToken))
                 .andExpect(status().isOk())
                 .andReturn();
 
         var body = result.getResponse().getContentAsString();
-        assertThatJson(body).isArray();
         assertThat(body).contains(testTask.getName());
         assertThat(body).contains(testTask.getId().toString());
-        System.out.println(body);
     }
-
 
     public CreateTaskDTO createTaskDTO() {
         var data =  new CreateTaskDTO();

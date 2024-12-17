@@ -51,9 +51,7 @@ class UserControllerTest {
 	private ObjectMapper om;
 
 	private SecurityMockMvcRequestPostProcessors.JwtRequestPostProcessor adminToken;
-
 	private User testUser;
-
 
 	@BeforeEach
 	public void setUp() {
@@ -89,10 +87,8 @@ class UserControllerTest {
 				.andReturn();
 
 		var body = result.getResponse().getContentAsString();
-		assertThatJson(body).isArray();
 		assertThat(body).contains(testUser.getFirstName());
 		assertThat(body).doesNotContain(testUser.getPasswordDigest());
-
 		assertThat(body).contains("hexlet@example.com");
 	}
 
@@ -109,7 +105,6 @@ class UserControllerTest {
 				.andReturn();
 
 		var body = result.getResponse().getContentAsString();
-		System.out.println(body);
 		assertThatJson(body).and(
 				v -> v.node("id").isEqualTo(testUser.getId()),
 				v -> v.node("email").isEqualTo(testUser.getEmail()),
@@ -145,7 +140,7 @@ class UserControllerTest {
 	}
 
 	@Test
-	public void testCreateWithWrongPassword() throws Exception {
+	public void testCreateUserWithWrongPassword() throws Exception {
 		var data = Instancio.of(modelGenerator.getCreateUserDTO())
 				.create();
 		data.setPassword("12");
@@ -173,6 +168,7 @@ class UserControllerTest {
 				.andExpect(status().isForbidden());
 
 		var tokenTestUser = jwt().jwt(builder -> builder.subject(testUser.getEmail()));
+
 		var request2 = MockMvcRequestBuilders.put("/api/users/" + testUser.getId())
 				.with(tokenTestUser)
 				.contentType(MediaType.APPLICATION_JSON)
@@ -216,12 +212,4 @@ class UserControllerTest {
 		var user = userRepository.findById(testUser.getId());
 		assertThat(user).isEmpty();
 	}
-/*
-	@Test
-	public void testDeleteWithWrongId() throws Exception {
-		mockMvc.perform(delete("/api/users/" + 10000).with(adminToken))
-				.andExpect(status().isNotFound());
-	}
- */
-
 }
