@@ -33,7 +33,7 @@ import java.nio.charset.StandardCharsets;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class UsersControllerTest {
+class UserControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
