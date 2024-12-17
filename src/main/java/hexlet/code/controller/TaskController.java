@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tasks")
-public class TasksController {
+public class TaskController {
 
     @Autowired
     private TaskRepository taskRepository;
