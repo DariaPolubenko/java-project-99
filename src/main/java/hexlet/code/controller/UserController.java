@@ -3,9 +3,7 @@ package hexlet.code.controller;
 import hexlet.code.dto.user.CreateUserDTO;
 import hexlet.code.dto.user.UpdateUserDTO;
 import hexlet.code.dto.user.UserDTO;
-import hexlet.code.exception.ResourceNotFoundException;
-import hexlet.code.mapper.UserMapper;
-import hexlet.code.repository.UserRepository;
+import hexlet.code.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,39 +27,29 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
 
     private static final String AUTHORIZATION = "authentication.getName() == @userRepository.findById(#id).get().getEmail()";
 
     @GetMapping
     public ResponseEntity<List<UserDTO>> index() {
-        var users = userRepository.findAll();
-        var usersDTO = users.stream()
-                .map(userMapper::map)
-                .toList();
+        var users = userService.getAll();
         return ResponseEntity.ok()
                 .header("X-Total-Count", String.valueOf(users.size()))
-                .body(usersDTO);
+                .body(users);
     }
 
     @GetMapping("/{id}")
     public UserDTO show(@PathVariable Long id) {
-        var user = userRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
-        var userDTO = userMapper.map(user);
-        return userDTO;
+        var user = userService.findById(id);
+        return user;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO create(@Valid @RequestBody CreateUserDTO data) {
-        var user = userMapper.map(data);
-        userRepository.save(user);
-        var userDTO = userMapper.map(user);
-        return userDTO;
+        var user = userService.create(data);
+        return user;
     }
 
     //не очень нравится решение с AUTHORIZATION, так как повторно обновить емаил не дает,
@@ -70,20 +58,14 @@ public class UserController {
     @PreAuthorize(AUTHORIZATION)
     @PutMapping("/{id}")
     public UserDTO update(@PathVariable Long id, @Valid @RequestBody UpdateUserDTO data) throws AccessDeniedException {
-        var user = userRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
-        userMapper.update(data, user);
-        userRepository.save(user);
-        var userDTO = userMapper.map(user);
-        return userDTO;
+        var user = userService.update(id, data);
+        return user;
     }
 
     @PreAuthorize(AUTHORIZATION)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) throws AccessDeniedException {
-        var user = userRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
-        userRepository.delete(user);
+        userService.delete(id);
     }
 }
